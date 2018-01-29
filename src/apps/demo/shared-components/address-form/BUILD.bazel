@@ -1,0 +1,13 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+
+ng_module(
+    name = "addressform",
+    srcs = glob(["*.ts"]),
+    tsconfig = "//src/apps/demo:tsconfig.json",
+    assets = ["//src/apps/demo/shared-components/address-form:address-form.html"],
+    deps = ["@rxjs",
+            "//src/apps/demo/shared-components/shared"        
+    ]
+)

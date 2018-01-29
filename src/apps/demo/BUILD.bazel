@@ -22,7 +22,11 @@ ng_module(
             "//src/apps/demo/shared-components/bound-textbox:boundtextbox",
             "//src/apps/demo/shared-components/about:about",
             "//src/apps/demo/shared-components/input-controls:inputcontrols",
-            "//src/apps/demo/shared-components/input-output:inputoutput"
+            "//src/apps/demo/shared-components/input-output:inputoutput",
+            "//src/apps/demo/shared-components/survey:survey",
+            "//src/apps/demo/shared-components/address-form:addressform",
+            "//src/apps/demo/shared-components/dependency-injection:addressbook"
+            
     ],
 )
 

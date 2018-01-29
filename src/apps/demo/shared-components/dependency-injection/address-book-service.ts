@@ -1,5 +1,6 @@
 import {Http, Response} from '@angular/http'
 import {Injectable} from '@angular/core'
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AddressBookService {
@@ -10,8 +11,8 @@ export class AddressBookService {
         this.http = http;
     }
 
-    getEntries(){
-        return this.http.get('/api/people.json').map((res: Response) => res.json());
+    getEntries(): Observable<any> {
+      return this.http.get('/api/people.json').map((res: Response) => res.json());
     }
 
 }
