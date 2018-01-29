@@ -5,6 +5,8 @@ import {Http,Response} from '@angular/http';
 import {TreeNode} from '../tree-node';
 import {treeNodeReducer} from './tree-node-reducer';
 
+import 'rxjs/add/operator/map';
+
 @Injectable()
 export class Store{
 

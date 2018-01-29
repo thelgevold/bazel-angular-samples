@@ -4,7 +4,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {DemoPage} from './shared-components/demo-page/demo-page';
 // import {AboutComponent} from '../shared-components/about/about.component';
 
-// import {TreeViewDemo} from '../shared-components/tree-view/tree-view-demo';
+import {TreeViewDemo} from './shared-components/tree-view/tree-view-demo';
 // import {ContactList} from '../shared-components/contact-list/contact-list';
 // import {BoundTextbox} from '../shared-components/bound-textbox/bound-textbox';
 // import {Directory} from '../shared-components/tree-view/directory';
@@ -20,13 +20,13 @@ import {Spreadsheet} from './shared-components/spreadsheet/spreadsheet';
 // import {AddressForm} from '../shared-components/address-form/address-form';
 // import {Graph} from '../shared-components/algorithms/graph/graph';
 // import {PubSub} from '../shared-components/pub-sub/pub-sub';
-// import {TextEditor} from '../shared-components/text-editor/text-editor';
+import {TextEditor} from './shared-components/text-editor/text-editor';
 // import {CommentDemo} from '../shared-components/change-detection/comment-demo';
 // import {Parent} from '../shared-components/access-child-components/parent';
 // import {SurveyDemo} from '../shared-components/survey/survey-demo';
 // import {LogDemo} from '../shared-components/log-tail/log-demo';
 // import {InputOutputDemo} from '../shared-components/input-output/input-output-demo';
-// import {CountryDemo} from '../shared-components/lazy-loaded-tree-view/country-demo';
+import {CountryDemo} from './shared-components/lazy-loaded-tree-view/country-demo';
 // import {RxJsStreams} from '../shared-components/rxjs-streams/rxjs-streams';
 // import {CachingDemo} from '../shared-components/rxjs-caching/caching-demo';
 // import {RxJsBuffering} from '../shared-components/rxjs-buffering/rxjs-buffering';
@@ -51,10 +51,10 @@ const routes: Routes = [
       // { path: 'algorithms', component:Algorithms},
       // { path: 'graph', component:Graph},
       // { path: 'pub-sub', component:PubSub},
-      // { path: 'text-editor', component:TextEditor},
+      { path: 'text-editor', component:TextEditor},
       // { path: 'address', component:AddressBook},
       // { path: 'http', component:HttpSample},
-      // { path: 'treeview', component:TreeViewDemo},
+      { path: 'treeview', component:TreeViewDemo},
       // { path: 'grid', component:GridDemo},
       // { path: 'input', component:InputControls},
       // { path: 'contact', component:ContactList},
@@ -68,7 +68,7 @@ const routes: Routes = [
       // { path: 'rxjs', component:RxJsStreams},
       // { path: 'friends', component:CachingDemo},
       // { path: 'buffering', component:RxJsBuffering},
-      // { path: 'countries', component:CountryDemo},
+      { path: 'countries', component:CountryDemo},
       // { path: 'cars', component:CarsComponent}
     ]
   }

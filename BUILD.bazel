@@ -33,6 +33,7 @@ filegroup(
     # do not sort
     srcs = [
         "//:node_modules/zone.js/dist/zone.min.js",
+        "//:api",
         "//:node_modules/systemjs/dist/system.src.js",
         "//:site.css",
         "//:node_modules/bootstrap/dist/css/bootstrap.min.css"

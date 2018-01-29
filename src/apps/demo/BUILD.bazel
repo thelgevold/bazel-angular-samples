@@ -9,7 +9,10 @@ ng_module(
     deps = ["@rxjs", 
             "//src/apps/demo/shared-components/demo-page:demopage",
             "//src/apps/demo/shared-components/shared",
-            "//src/apps/demo/shared-components/spreadsheet"
+            "//src/apps/demo/shared-components/spreadsheet",
+            "//src/apps/demo/shared-components/tree-view:treeview",
+            "//src/apps/demo/shared-components/lazy-loaded-tree-view:lazytree",
+            "//src/apps/demo/shared-components/text-editor:texteditor"
     ],
 )
 
