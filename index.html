@@ -2,15 +2,14 @@
 <head>
   <title>Angular Demos</title>
 
-  <script src="node_modules/core-js/client/shim.min.js"></script>
-  <script src="node_modules/systemjs/dist/system.js"></script>
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
+  <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/jquery-ui-dist/jquery-ui.min.js"></script> -->
 
-
+<!-- 
   <script src="node_modules/underscore/underscore-min.js"></script>
-  <script src="node_modules/react/dist/react.min.js"></script>
+  <script src="node_modules/react/dist/react.min.js"></script> -->
 
   <script src="node_modules/zone.js/dist/zone.min.js"></script>
   
@@ -18,25 +17,69 @@
 
   <link href="site.css?v=1" rel="stylesheet">
 
+  <script>
+    (function (global) {
+  
+  System.config({
+    
+    paths: {
+      'npm:': './node_modules/'
+    },
+    defaultExtension: 'js',
+    map: {
+
+      '@angular/animations': 'npm:@angular/animations/bundles/animations.umd.js',
+      '@angular/animations/browser': 'npm:@angular/animations/bundles/animations-browser.umd.js',
+      '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+      '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+      '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+      '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+      '@angular/platform-browser/animations': 'npm:@angular/platform-browser/bundles/platform-browser-animations.umd.js',
+      '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+      '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+      '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+      '@angular/router/upgrade': 'npm:@angular/router/bundles/router-upgrade.umd.js',
+      '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      '@angular/upgrade': 'npm:@angular/upgrade/bundles/upgrade.umd.js',
+      '@angular/upgrade/static': 'npm:@angular/upgrade/bundles/upgrade-static.umd.js',
+
+     // 'rxjs': 'npm:rxjs'
+    },
+    packages: {
+      // rxjs: {
+      //   defaultExtension: 'js'
+      // }
+    }
+  });
+})(this);
+  </script>
+
 </head>
 <body>
 
 <demo-app></demo-app>
 
 <script>
-    var __React = React;
-    var Dispatcher;
-    var EventEmitter;
-    System.import('node_modules/flux/dist/Flux.min.js')
-    .then(function(data){
-       Dispatcher = data.Dispatcher;
-       return System.import('node_modules/events/events.js');
-    })
-    .then(function(data) {
-       EventEmitter = data.EventEmitter;
-       return System.import('dist/bundle.js');
-    });
+   // var __React = React;
+   // var Dispatcher;
+   // var EventEmitter;
+    System.import('src/apps/demo/bundle.js').then(() => {
+           return System.import("angular_samples/src/apps/demo/main");
+        })
+        .catch((e) => {
+           console.log(e);
+        })
+    // .then(function(data){
+    //    Dispatcher = data.Dispatcher;
+    //    return System.import('node_modules/events/events.js');
+    // })
+    // .then(function(data) {
+    //    EventEmitter = data.EventEmitter;
+    //    return System.import('dist/bundle.js');
+    // });
 </script>
+
+<demo-app></demo-app>
 
 </body>
 

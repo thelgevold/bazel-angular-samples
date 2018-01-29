@@ -1,0 +1,59 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+
+ng_module(
+    name = "demo",
+    srcs = glob(["*.ts"]),
+    tsconfig = ":tsconfig.json",
+    deps = ["@rxjs", 
+            "//src/apps/demo/shared-components/demo-page:demopage",
+            "//src/apps/demo/shared-components/shared",
+            "//src/apps/demo/shared-components/spreadsheet"
+    ],
+)
+
+genrule(
+    name = "zone.js",
+    srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
+    outs = ["zone.min.js"],
+    cmd = "cp $< $@",
+)
+
+load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
+devmode_js_sources(
+    name = "devsources",
+    deps = [":demo"],
+)
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+
+nodejs_binary(
+    name = "concat",
+    entry_point = "angular_samples/concat.js",
+    data = [
+        ":devsources",
+        ":devsources.MF",
+        "//:concat.js"
+    ],
+)
+ 
+load(":bundle.bzl", "bundle")
+bundle(
+    name = "bundle",
+    devsource = ":devsources.MF"
+) 
+
+nodejs_binary(
+    name = "web",
+    entry_point = "lite-server/bin/lite-server",
+    templated_args = ["--baseDir", "."],
+    data = [
+        "//:node_modules/zone.js/dist/zone.min.js",
+        "//:node_modules/systemjs/dist/system.src.js",
+        "//:index.html",
+        "//:site.css",
+        "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
+        ":bundle.js"
+    ]
+)

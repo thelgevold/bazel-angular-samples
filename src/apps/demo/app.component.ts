@@ -1,4 +1,13 @@
-<div class="container">
+import {Component} from '@angular/core';
+
+import {HashLocationStrategy, LocationStrategy, Location} from '@angular/common';
+
+declare var System:any;
+
+@Component(
+  {
+    selector: 'demo-app',
+    template: `<div class="container">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div>
@@ -19,3 +28,22 @@
     <router-outlet name="msg"></router-outlet>
 </div>
 <router-outlet></router-outlet>
+`
+  })
+
+
+export class AppComponent {
+
+  constructor(public location: Location) {
+  }
+
+  getLinkStyle(path) {
+
+    if(path === this.location.path()){
+      return true;
+    }
+    else if(path.length > 0){
+      return this.location.path().indexOf(path) > -1;
+    }
+  }
+}

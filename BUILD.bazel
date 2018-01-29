@@ -1,0 +1,40 @@
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["tsconfig.json"])
+exports_files(["index.html"])
+exports_files(["concat.js"])
+
+
+filegroup(
+    name = "node_modules",
+    srcs = glob(["/".join([
+        "node_modules",
+        pkg,
+        "**",
+        ext,
+    ]) for pkg in [
+        "@angular",
+        "protractor",
+        "tsickle",
+        "tsutils",
+        "typescript",
+        "@types",
+    ] for ext in [
+        "*.js",
+        "*.json",
+        "*.d.ts",
+    ]] + [
+        "node_modules/lite-server/**",
+    ]),
+)
+
+filegroup(
+    name = "bootstrap_files",
+    # do not sort
+    srcs = [
+        "//:node_modules/zone.js/dist/zone.min.js",
+        "//:node_modules/systemjs/dist/system.src.js",
+        "//:site.css",
+        "//:node_modules/bootstrap/dist/css/bootstrap.min.css"
+    ]
+)

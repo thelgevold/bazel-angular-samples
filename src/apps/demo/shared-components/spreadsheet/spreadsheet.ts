@@ -2,6 +2,7 @@ import {Component, AfterViewChecked, Input} from '@angular/core';
 import {SpreadsheetModel} from './spreadsheetModel';
 import {KeyMap} from './key-map';
 import {HeaderRowService} from './header-row-service';
+import {Row} from './row';
 
 @Component({
     selector: 'spreadsheet',
@@ -30,27 +31,27 @@ export class Spreadsheet implements AfterViewChecked{
     header = [];
     visibleRows = [];
 
-    constructor(){
+    constructor() {
         this.model = new SpreadsheetModel(10,4);
         this.header = HeaderRowService.createHeader(this.model.rows[0].columns.length);
         this.visibleRows = this.getVisibleRows();
     }
 
-    getHeader(){
+    getHeader() {
         return HeaderRowService.createHeader(this.model.rows[0].columns.length);
     }
 
-    navigate($event){
+    navigate($event) {
         this.model.navigate($event.keyCode);
         this.visibleRows = this.getVisibleRows();
     }
 
-    ngAfterViewChecked(){
+    ngAfterViewChecked() {
         let cell = document.getElementById(this.model.current.rowIndex + '-' + this.model.current.columnIndex);
         cell.focus();
     }
 
-    getVisibleRows(){
+    getVisibleRows(): Row[] {
         return this.model.rows.filter((row) => row.rowIndex >= this.model.start && row.rowIndex < this.model.end);
     }
 

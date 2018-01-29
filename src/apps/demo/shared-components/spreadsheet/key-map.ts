@@ -28,7 +28,7 @@ export class KeyMap{
 
 }
 
-class KeyDirection{
+export class KeyDirection {
     up:Boolean;
     left:Boolean;
     right:Boolean;
