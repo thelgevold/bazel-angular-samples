@@ -12,7 +12,7 @@ export class RxJsBuffering{
   numbers = [1,2,3,4,5];
   sum = new Subject<number>();
   series;
-  calculation = {};
+  calculation: any = {};
   showSum = false;
 
   add(number){

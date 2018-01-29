@@ -33,8 +33,8 @@ export class GridDemo {
     }
 }
 
-interface Person {
-    firstName:string;
-    lastName:string;
-    age:number;
+export interface Person {
+  firstName:string;
+  lastName:string;
+  age:number;
 }

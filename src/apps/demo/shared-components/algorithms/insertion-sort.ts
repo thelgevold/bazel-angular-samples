@@ -46,7 +46,7 @@ export class InsertionSort {
     }
 }
 
-class ValList{
+export class ValList {
     items:Array<ListItem>;
 
     setCurrent(item){
@@ -59,7 +59,7 @@ class ValList{
     }
 }
 
-class ListItem{
+export class ListItem{
     val:Number;
     current:Boolean;
 

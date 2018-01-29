@@ -21,17 +21,17 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 // import {JQueryIntegrationModule} from '../shared-components/jquery-integration/jquery-integration.module';
 // import {LazyLoadedTreeViewModule} from '../shared-components/lazy-loaded-tree-view/lazy-loaded-tree-view.module';
 // import {LogTailModule} from '../shared-components/log-tail/log-tail.module';
-// import {PubSubModule} from '../shared-components/pub-sub/pub-sub.module';
+import {PubSubModule} from './shared-components/pub-sub/pub-sub.module';
 // import {ReactIntegrationModule} from '../shared-components/react-integration/react-integration.module';
 // import {TreeViewModule} from '../shared-components/tree-view/tree-view.module';
 // import {TextEditorModule} from '../shared-components/text-editor/text-editor.module';
 // import {SurveyModule} from '../shared-components/survey/survey.module';
 import {SpreadsheetModule} from './shared-components/spreadsheet/spreadsheet.module';
-// import {RxJsStreamsModule} from '../shared-components/rxjs-streams/rxjs-streams.module';
+import {RxJsStreamsModule} from './shared-components/rxjs-streams/rxjs-streams.module';
 // import {AddressFormModule} from '../shared-components/address-form/address-form.module';
 // import {RxJsErrorHandlingModule} from '../shared-components/rxjs-error-handling/rxjs-error-handling.module';
 // import {RxJsCachingModule} from '../shared-components/rxjs-caching/rxjs-caching.module';
-// import {RxJsBufferingModule} from '../shared-components/rxjs-buffering/rxjs-buffering.module';
+import {RxJsBufferingModule} from './shared-components/rxjs-buffering/rxjs-buffering.module';
 
 @NgModule({
   imports: [BrowserModule, 

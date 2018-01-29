@@ -12,7 +12,12 @@ ng_module(
             "//src/apps/demo/shared-components/spreadsheet",
             "//src/apps/demo/shared-components/tree-view:treeview",
             "//src/apps/demo/shared-components/lazy-loaded-tree-view:lazytree",
-            "//src/apps/demo/shared-components/text-editor:texteditor"
+            "//src/apps/demo/shared-components/text-editor:texteditor",
+            "//src/apps/demo/shared-components/algorithms:graph",
+            "//src/apps/demo/shared-components/rxjs-streams:rxjsstreams",
+            "//src/apps/demo/shared-components/rxjs-buffering:rxjsbuffering",
+            "//src/apps/demo/shared-components/pub-sub:pubsub",
+            "//src/apps/demo/shared-components/grid:grid"
     ],
 )
 
