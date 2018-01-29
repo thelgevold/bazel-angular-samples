@@ -17,7 +17,12 @@ ng_module(
             "//src/apps/demo/shared-components/rxjs-streams:rxjsstreams",
             "//src/apps/demo/shared-components/rxjs-buffering:rxjsbuffering",
             "//src/apps/demo/shared-components/pub-sub:pubsub",
-            "//src/apps/demo/shared-components/grid:grid"
+            "//src/apps/demo/shared-components/grid:grid",
+            "//src/apps/demo/shared-components/contact-list:contact",
+            "//src/apps/demo/shared-components/bound-textbox:boundtextbox",
+            "//src/apps/demo/shared-components/about:about",
+            "//src/apps/demo/shared-components/input-controls:inputcontrols",
+            "//src/apps/demo/shared-components/input-output:inputoutput"
     ],
 )
 

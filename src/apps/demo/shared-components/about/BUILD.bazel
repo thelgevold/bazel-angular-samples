@@ -1,0 +1,11 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+
+ng_module(
+    name = "about",
+    srcs = glob(["*.ts"]),
+    tsconfig = "//src/apps/demo:tsconfig.json",
+    assets = ["//src/apps/demo/shared-components/about:about.component.html"],
+    deps = ["@rxjs"]
+)
