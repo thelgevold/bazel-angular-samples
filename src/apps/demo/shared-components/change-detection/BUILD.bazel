@@ -1,0 +1,15 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+
+ng_module(
+    name = "changedetection",
+    srcs = glob(["*.ts"]),
+    tsconfig = "//src/apps/demo:tsconfig.json",
+    assets = ["//src/apps/demo/shared-components/change-detection:comment-demo.html",
+              "//src/apps/demo/shared-components/change-detection:change-detection.html" 
+             ],
+    deps = ["@rxjs",
+            "//src/apps/demo/shared-components/shared"        
+    ]
+)

@@ -25,7 +25,10 @@ ng_module(
             "//src/apps/demo/shared-components/input-output:inputoutput",
             "//src/apps/demo/shared-components/survey:survey",
             "//src/apps/demo/shared-components/address-form:addressform",
-            "//src/apps/demo/shared-components/dependency-injection:addressbook"
+            "//src/apps/demo/shared-components/dependency-injection:addressbook",
+            "//src/apps/demo/shared-components/access-child-components:accesschildcomponents",
+            "//src/apps/demo/shared-components/change-detection:changedetection",
+            "//src/apps/demo/shared-components/log-tail:logtail"
             
     ],
 )
