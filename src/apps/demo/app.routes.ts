@@ -26,9 +26,9 @@ import {LogDemo} from './shared-components/log-tail/log-demo';
 import {InputOutputDemo} from './shared-components/input-output/input-output-demo';
 import {CountryDemo} from './shared-components/lazy-loaded-tree-view/country-demo';
 import {RxJsStreams} from './shared-components/rxjs-streams/rxjs-streams';
-// import {CachingDemo} from '../shared-components/rxjs-caching/caching-demo';
+import {CachingDemo} from './shared-components/rxjs-caching/caching-demo';
 import {RxJsBuffering} from './shared-components/rxjs-buffering/rxjs-buffering';
-// import {CarsComponent} from '../shared-components/rxjs-error-handling/cars.component';
+import {CarsComponent} from './shared-components/rxjs-error-handling/cars.component';
 
 const routes: Routes = [
   {
@@ -64,10 +64,10 @@ const routes: Routes = [
       { path: 'redux', component:LogDemo},
       { path: 'iodemo', component: InputOutputDemo},
       { path: 'rxjs', component: RxJsStreams},
-      // { path: 'friends', component:CachingDemo},
+      { path: 'friends', component:CachingDemo},
       { path: 'buffering', component: RxJsBuffering},
       { path: 'countries', component: CountryDemo},
-      // { path: 'cars', component:CarsComponent}
+      { path: 'cars', component:CarsComponent}
     ]
   }
 ];
