@@ -5,20 +5,11 @@
     "serve-dev": "ibazel run //src/apps/demo:web"
   },
   "devDependencies": {
-    "@angular-devkit/build-optimizer": "0.0.36",
-    "@ngtools/webpack": "1.9.3",
-    "babili-webpack-plugin": "^0.1.1",
-    "@bazel/ibazel": "0.3.1",
     "browserify": "14.5.0",
     "compression": "1.6.2",
     "lite-server": "2.3.0",
-    "parcel-bundler": "1.4.0",
     "path": "0.12.7",
-    "raw-loader": "0.5.1",
-    "systemjs-builder": "0.16.4",
-    "typescript": "2.4.2",
-    "uglify-js": "3.2.2",
-    "webpack": "3.10.0"
+    "typescript": "2.4.2"
   },
   "dependencies": {
     "angular": "~1.4.7",
@@ -38,19 +29,14 @@
     "@angular/upgrade": "6.0.0-beta.1",
     "bootstrap": "~3.3.4",
     "core-js": "^2.4.1",
-    "events": "^1.0.2",
-    "fbjs": "^0.3.1",
-    "flux": "^2.1.1",
     "rollup": "0.55.0",
-    "rollup-plugin-commonjs": "8.2.6",
+    "rollup-plugin-commonjs": "8.3.0",
     "rollup-plugin-uglify": "2.0.1",
     "rollup-plugin-node-resolve": "3.0.0",
-    "rxjs": "^5.5.6",
+    "rxjs": "5.5.6",
     "systemjs": "0.20.19",
     "zone.js": "0.8.6",
     "jquery": "3.3.1",
-    "jquery-ui-dist": "1.12.1",
-    "react": "~0.13.3",
-    "underscore": "~1.8.3"
+    "jquery-ui-dist": "1.12.1"
   }
 }
