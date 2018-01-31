@@ -36,13 +36,6 @@ ng_module(
     ],
 )
 
-genrule(
-    name = "zone.js",
-    srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
-    outs = ["zone.min.js"],
-    cmd = "cp $< $@",
-)
-
 load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
 devmode_js_sources(
     name = "devsources",

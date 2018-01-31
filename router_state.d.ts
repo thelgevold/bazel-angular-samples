@@ -1,5 +1,5 @@
-//TEMPORARY HACK!
-//The typings are broken in this file, so I am copying in a fixed version.
+//TEMPORARY HACK!!!!
+//Typings are missing in this file, so I am copying in a fixed version.
 
 /**
  * @license
