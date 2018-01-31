@@ -20,7 +20,6 @@ ng_module(
             "//src/apps/demo/shared-components/grid:grid",
             "//src/apps/demo/shared-components/contact-list:contact",
             "//src/apps/demo/shared-components/bound-textbox:boundtextbox",
-            "//src/apps/demo/shared-components/about:about",
             "//src/apps/demo/shared-components/input-controls:inputcontrols",
             "//src/apps/demo/shared-components/input-output:inputoutput",
             "//src/apps/demo/shared-components/survey:survey",
@@ -33,7 +32,6 @@ ng_module(
             "//src/apps/demo/shared-components/http:http",
             "//src/apps/demo/shared-components/rxjs-caching:rxjscaching",
             "//src/apps/demo/shared-components/jquery-integration:jqueryintegration"
-            #"//src/apps/demo/shared-components/react-integration:reactintegration"
             
     ],
 )

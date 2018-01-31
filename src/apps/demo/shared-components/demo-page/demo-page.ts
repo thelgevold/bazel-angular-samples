@@ -21,7 +21,6 @@ import {Location} from '@angular/common';
             <a [class.active]="getLinkStyle('/demo/countries')" [routerLink]="['/demo/countries']" class="list-group-item">Lazy Loaded Tree View</a>
             <a [class.active]="getLinkStyle('/demo/rxjs')" [routerLink]="['/demo/rxjs']" class="list-group-item">RxJs Streams</a>
             <a [class.active]="getLinkStyle('/demo/friends')" [routerLink]="['/demo/friends']" class="list-group-item">RxJs Caching</a>
-            <a [class.active]="getLinkStyle('/demo/react')" [routerLink]="['/demo/react']" class="list-group-item">React Integration</a>
             <a [class.active]="getLinkStyle('/demo/graph')" [routerLink]="['/demo/graph']" class="list-group-item">Graph</a>
             <a [class.active]="getLinkStyle('/demo/algorithms')" [routerLink]="['/demo/algorithms']" class="list-group-item">Insertion Sort</a>
             <a [class.active]="getLinkStyle('/demo/redux')" [routerLink]="['/demo/redux']" class="list-group-item">Redux</a>

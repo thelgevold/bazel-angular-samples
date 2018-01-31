@@ -2,7 +2,6 @@ import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 
 import {DemoPage} from './shared-components/demo-page/demo-page';
-import {AboutComponent} from './shared-components/about/about.component';
 
 import {TreeViewDemo} from './shared-components/tree-view/tree-view-demo';
 import {ContactList} from './shared-components/contact-list/contact-list';
@@ -35,7 +34,6 @@ const routes: Routes = [
     redirectTo: '/demo/spreadsheet',
     pathMatch: 'full'
   },
-  { path: 'about', component: AboutComponent},
   {
     path: 'demo',
     

@@ -1,4 +1,3 @@
-import {AboutModule} from './shared-components/about/about.module';
 import {AlgorithmsModule} from './shared-components/algorithms/algorithms.module';
 import {BoundTextboxModule} from './shared-components/bound-textbox/bound-textbox.module';
 import {ChangeDetectionModule} from './shared-components/change-detection/change-detection.module';
@@ -24,7 +23,6 @@ import {RxJsCachingModule} from './shared-components/rxjs-caching/rxjs-caching.m
 import {RxJsBufferingModule} from './shared-components/rxjs-buffering/rxjs-buffering.module';
 
 export const FeatureModules = [
-  AboutModule,
   AlgorithmsModule,
   BoundTextboxModule,
   ChangeDetectionModule,
