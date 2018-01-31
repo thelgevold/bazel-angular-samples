@@ -63,7 +63,7 @@
     "rollup-plugin-commonjs": "8.2.6",
     "rollup-plugin-uglify": "2.0.1",
     "rollup-plugin-node-resolve": "3.0.0",
-    "rxjs": "5.5.6",
+    "rxjs": "^5.5.6",
     "systemjs": "0.20.19",
     "zone.js": "0.8.6",
     "jquery": "3.3.1",

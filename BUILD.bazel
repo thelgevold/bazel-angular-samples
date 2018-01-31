@@ -30,7 +30,6 @@ filegroup(
 
 filegroup(
     name = "bootstrap_files",
-    # do not sort
     srcs = [
         "//:node_modules/zone.js/dist/zone.min.js",
         "//:api",

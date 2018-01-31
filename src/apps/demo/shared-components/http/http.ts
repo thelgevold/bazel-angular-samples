@@ -2,8 +2,8 @@ import {Component} from '@angular/core';
 import {Http, Response, Headers} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {Subject } from 'rxjs/Subject';
+
 import 'rxjs/add/operator/switchMap';
-import 'rxjs/add/operator/toPromise';
 
 @Component({
     templateUrl: './http.html'
@@ -97,7 +97,7 @@ export class HttpSample {
     }
 }
 
-class Person{
+export class Person{
     firstName:string;
     lastName:string;
 }

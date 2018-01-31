@@ -1,4 +1,4 @@
-import {Routes, RouterModule}   from '@angular/router';
+import {Routes, RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
 
 import {DemoPage} from './shared-components/demo-page/demo-page';
@@ -8,11 +8,11 @@ import {TreeViewDemo} from './shared-components/tree-view/tree-view-demo';
 import {ContactList} from './shared-components/contact-list/contact-list';
 import {BoundTextbox} from './shared-components/bound-textbox/bound-textbox';
 import {GridDemo} from './shared-components/grid/grid-demo';
-// import {HttpSample} from '../shared-components/http/http';
+import {HttpSample} from './shared-components/http/http';
 import {Spreadsheet} from './shared-components/spreadsheet/spreadsheet';
 import {Algorithms} from './shared-components/algorithms/algorithms';
-// import {AngularHost} from '../shared-components/react-integration/angular-host';
-// import {JqueryIntegration} from '../shared-components/jquery-integration/jquery-integration';
+//import {AngularHost} from './shared-components/react-integration/angular-host';
+import {JqueryIntegration} from './shared-components/jquery-integration/jquery-integration';
 import {InputControls} from './shared-components/input-controls/input-controls';
 import {AddressBook} from './shared-components/dependency-injection/address-book';
 import {AddressForm} from './shared-components/address-form/address-form';
@@ -44,14 +44,14 @@ const routes: Routes = [
     children: [
     { path: 'spreadsheet', component: Spreadsheet},
     
-      // { path: 'jquery', component: JqueryIntegration},
-      // { path: 'react', component:AngularHost},
+      { path: 'jquery', component: JqueryIntegration},
+      //{ path: 'react', component:AngularHost},
       { path: 'algorithms', component: Algorithms},
       { path: 'graph', component: Graph},
       { path: 'pub-sub', component: PubSub},
       { path: 'text-editor', component: TextEditor},
       { path: 'address', component: AddressBook},
-      // { path: 'http', component:HttpSample},
+      { path: 'http', component:HttpSample},
       { path: 'treeview', component: TreeViewDemo},
       { path: 'grid', component: GridDemo},
       { path: 'input', component: InputControls},

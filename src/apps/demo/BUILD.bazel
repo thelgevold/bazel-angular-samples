@@ -30,7 +30,10 @@ ng_module(
             "//src/apps/demo/shared-components/change-detection:changedetection",
             "//src/apps/demo/shared-components/log-tail:logtail",
             "//src/apps/demo/shared-components/rxjs-error-handling:rxjserrorhandling",
-            "//src/apps/demo/shared-components/rxjs-caching:rxjscaching"
+            "//src/apps/demo/shared-components/http:http",
+            "//src/apps/demo/shared-components/rxjs-caching:rxjscaching",
+            "//src/apps/demo/shared-components/jquery-integration:jqueryintegration"
+            #"//src/apps/demo/shared-components/react-integration:reactintegration"
             
     ],
 )
@@ -71,11 +74,9 @@ nodejs_binary(
     entry_point = "lite-server/bin/lite-server",
     templated_args = ["--baseDir", "."],
     data = [
-        "//:node_modules/zone.js/dist/zone.min.js",
-        "//:node_modules/systemjs/dist/system.src.js",
         "//:index.html",
         "//:site.css",
-        "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "//:bootstrap_files",
         ":bundle.js"
     ]
 )

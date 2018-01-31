@@ -1,0 +1,12 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+
+ng_module(
+    name = "reactintegration",
+    srcs = glob(["*.ts"]),
+    tsconfig = "//src/apps/demo:tsconfig.json",
+    deps = ["@rxjs",
+            "//src/apps/demo/shared-components/shared"        
+    ]
+)
