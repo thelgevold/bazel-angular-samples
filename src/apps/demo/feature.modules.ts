@@ -13,7 +13,6 @@ import {JQueryIntegrationModule} from './shared-components/jquery-integration/jq
 import {LazyLoadedTreeViewModule} from './shared-components/lazy-loaded-tree-view/lazy-loaded-tree-view.module';
 import {LogTailModule} from './shared-components/log-tail/log-tail.module';
 import {PubSubModule} from './shared-components/pub-sub/pub-sub.module';
-//import {ReactIntegrationModule} from './shared-components/react-integration/react-integration.module';
 import {TreeViewModule} from './shared-components/tree-view/tree-view.module';
 import {TextEditorModule} from './shared-components/text-editor/text-editor.module';
 import {SurveyModule} from './shared-components/survey/survey.module';
@@ -40,7 +39,6 @@ export const FeatureModules = [
   LazyLoadedTreeViewModule,
   LogTailModule,
   PubSubModule,
-  //ReactIntegrationModule,
   TreeViewModule,
   TextEditorModule,
   SurveyModule,
