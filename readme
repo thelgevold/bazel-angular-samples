@@ -6,4 +6,4 @@ Steps to run the demo:
 
 DEV Envrionment:
 
-npm run serve-dev (open a browser and navigate to localhost:3000)
+npm run serve-dev (open a browser and navigate to localhost:9000)
