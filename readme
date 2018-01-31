@@ -2,4 +2,8 @@ Steps to run the demo:
 
 1) npm install
 
-2) npm run serve-dev (open a browser and navigate to localhost:3000)
+2) npm install -g @bazel/ibazel
+
+DEV Envrionment:
+
+npm run serve-dev (open a browser and navigate to localhost:3000)

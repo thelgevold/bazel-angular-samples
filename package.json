@@ -2,7 +2,7 @@
   "name": "angular2-poc",
   "scripts": {
     "postinstall": "cp router_state.d.ts node_modules/@angular/router/src && ngc -p angular.tsconfig.json",
-    "serve-dev": "bazel run //src/apps/demo:web"
+    "serve-dev": "ibazel run //src/apps/demo:web"
   },
   "devDependencies": {
     "@angular-devkit/build-optimizer": "0.0.36",
