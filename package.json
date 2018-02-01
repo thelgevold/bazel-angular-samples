@@ -2,8 +2,7 @@
   "name": "angular2-poc",
   "scripts": {
     "postinstall": "cp router_state.d.ts node_modules/@angular/router/src && ngc -p angular.tsconfig.json",
-    "build-prod": "ibazel build //src/apps/demo:prod",
-    "serve-prod": "ibazel run //src/apps/demo:prod_web"
+    "serve": "ibazel run //src/apps/demo:prod_web"
   },
   "devDependencies": {
     "browserify": "14.5.0",
