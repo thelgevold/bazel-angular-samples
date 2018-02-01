@@ -43,28 +43,36 @@ devmode_js_sources(
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
-nodejs_binary(
-    name = "concat",
-    entry_point = "angular_samples/concat.js",
-    data = [
-        ":devsources",
-        ":devsources.MF",
-        "//:concat.js"
-    ],
+load(":es6.bzl", "es6")
+
+es6(
+    name = "prod_source",
+    deps = [":demo"],
 )
- 
-load(":dev-bundle.bzl", "dev")
-dev(
-    name = "bundle",
-    entryPoint = "src/apps/demo",
-    devsource = ":devsources.MF"
-) 
 
 nodejs_binary(
-    name = "web",
+    name = "webpack",
+    entry_point = "webpack/bin/webpack",
+    data = [
+        "//:bootstrap_files",
+        "//:webpack.config.js",
+        ":prod_source"
+
+    ]
+)
+
+load(":webpack.bzl", "webpack")
+
+webpack(
+    name = "prod",
+    entryPoint = "src/apps/demo"
+)
+
+nodejs_binary(
+    name = "prod_web",
     entry_point = "lite-server/bin/lite-server",
     data = [
         "//:bootstrap_files",
-        ":bundle.js"
+        ":prod.js"
     ]
 )

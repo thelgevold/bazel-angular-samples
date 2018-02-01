@@ -17,7 +17,7 @@ export class GridDemo {
 
     getPeople(): Array<Person> {
         return [
-            {firstName:'Joe',lastName:'Jackson',age:20},
+            {firstName:'Joe11',lastName:'Jackson',age:20},
             {firstName:'Peter',lastName:'Smith',age:30},
             {firstName:'Jane',lastName:'Doe',age:50},
             {firstName:'Tim',lastName:'Smith',age:80}
