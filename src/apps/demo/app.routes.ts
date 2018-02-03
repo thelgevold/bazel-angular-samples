@@ -8,7 +8,6 @@ import {ContactList} from './shared-components/contact-list/contact-list';
 import {BoundTextbox} from './shared-components/bound-textbox/bound-textbox';
 import {GridDemo} from './shared-components/grid/grid-demo';
 import {HttpSample} from './shared-components/http/http';
-import {Spreadsheet} from './shared-components/spreadsheet/spreadsheet';
 import {Algorithms} from './shared-components/algorithms/algorithms';
 import {JqueryIntegration} from './shared-components/jquery-integration/jquery-integration';
 import {InputControls} from './shared-components/input-controls/input-controls';
@@ -31,7 +30,7 @@ import {CarsComponent} from './shared-components/rxjs-error-handling/cars.compon
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/demo/spreadsheet',
+    redirectTo: '/demo/countries',
     pathMatch: 'full'
   },
   {
@@ -39,7 +38,7 @@ const routes: Routes = [
     
     component: DemoPage,
     children: [
-    { path: 'spreadsheet', component: Spreadsheet},
+     { path: 'spreadsheet', loadChildren: './src/apps/demo/spreadsheet.module#SpreadsheetModule'},
     
       { path: 'jquery', component: JqueryIntegration},
       { path: 'algorithms', component: Algorithms},

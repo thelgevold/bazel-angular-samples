@@ -10,6 +10,35 @@
 
   <link href="site.css?v=1" rel="stylesheet">
 
+  <script>
+    (function (global) {
+    System.config({
+      map: {
+    //    './spreadsheet.module.ngfactory': 'spreadsheet.module.ngfactory.js',
+      },
+      
+      packages: {
+        '.' : {
+          map: {
+           // './spreadsheet.module.ngfactory': 'spreadsheet.module.ngfactory.js',
+            './text-editor.module.ngfactory': 'dist/rollup-lazy/text-editor.module.ngfactory.js',
+            './rxjs-streams.module.ngfactory': 'dist/rollup-lazy/rxjs-streams.module.ngfactory.js',
+            './rxjs-buffering.module.ngfactory': 'dist/rollup-lazy/rxjs-buffering.module.ngfactory.js',
+            './pub-sub.module.ngfactory': 'dist/rollup-lazy/pub-sub.module.ngfactory.js',
+            './lazy-loaded-treeview.module.ngfactory': 'dist/rollup-lazy/lazy-loaded-treeview.module.ngfactory.js',
+            './redux.module.ngfactory': 'dist/rollup-lazy/redux.module.ngfactory.js',
+            './insertion-sort.module.ngfactory': 'dist/rollup-lazy/insertion-sort.module.ngfactory.js',
+            './graph.module.ngfactory': 'dist/rollup-lazy/graph.module.ngfactory.js',
+            './dynamic-form.module.ngfactory': 'dist/rollup-lazy/dynamic-form.module.ngfactory.js',
+            './input-controls.module.ngfactory': 'dist/rollup-lazy/input-controls.module.ngfactory.js',
+            './main': 'dist/rollup-lazy/main.js'
+          },
+          defaultExtension: 'js'
+         }
+      }
+    });
+  })(this);
+    </script>
 </head>
 <body>
 <div class="container">  

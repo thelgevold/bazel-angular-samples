@@ -1,23 +1,15 @@
 def _rollup(ctx):
 
   baseFolder = "{0}/rollup.runfiles/{1}".format(ctx.executable.rollup.dirname, ctx.workspace_name)
-
   rollupConfig = "{0}/rollup.config.js".format(baseFolder)
 
-  print(rollupConfig)
-
-  entryPoint = "bazel-out/host/bin/src/apps/demo/prod_source.es6/{0}/src/apps/demo/{1}".format(ctx.workspace_name, ctx.attr.entry_point)
-  
-  #print(entryPoint)
-
   args = ["--config", rollupConfig]
-  args += ["--output.dir", ctx.outputs.bundle_es6.path.replace("main.js", "")]
+  args += ["--output.dir", ctx.outputs.bundle_es6_main.path.replace("main.js", "")]
   args += ["--output.format", "cjs"]
-  #args += ["--input", entryPoint]
  
   ctx.action(
       executable = ctx.executable.rollup,
-      outputs = [ctx.outputs.bundle_es6],
+      outputs = [ctx.outputs.bundle_es6_main, ctx.outputs.bundle_es6_spreadsheet, ctx.outputs.bundle_es6_chunk1],
       arguments = args
   )
 
@@ -31,6 +23,8 @@ rollup = rule(
         
     },
     outputs = {
-        "bundle_es6": "main.js"
+        "bundle_es6_main": "main.js",
+        "bundle_es6_spreadsheet": "spreadsheet.module.ngfactory.js",
+        "bundle_es6_chunk1": "chunk1.js"
     }
 )

@@ -2,11 +2,11 @@ const rollup = require('rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
 const base = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/angular_samples/src`;
+
 const main = `${base}/apps/demo/main.js`;
+const spreadsheet = `${base}/apps/demo/shared-components/spreadsheet/spreadsheet.module.ngfactory.js`;
 
 const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/rxjs/`;
-
-
   
   class ResolveFESM2015 {
     
@@ -18,7 +18,6 @@ const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/
 
       if (importee.startsWith('rxjs')) {
         let esm = importee.replace('rxjs/', '');
-        console.log(`${baseRxJs}${esm}.js`);
         return `${baseRxJs}${esm}.js`;
       }
     }
@@ -39,7 +38,8 @@ class NormalizePaths {
 
 export default {
   output: {format: 'iife'},
-  input: [main
+  input: [main,
+          spreadsheet
 
   ],
   experimentalCodeSplitting: true,

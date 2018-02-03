@@ -40,7 +40,6 @@ export const FeatureModules = [
   TreeViewModule,
   TextEditorModule,
   SurveyModule,
-  SpreadsheetModule,
   RxJsStreamsModule,
   AddressFormModule,
   RxJsErrorHandlingModule,
