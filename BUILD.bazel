@@ -33,7 +33,6 @@ filegroup(
         "//:api",
         "//:site.css",
         "//:index.html",
-        "//:bs-config.js",
         "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
         "//:node_modules/systemjs/dist/system.src.js"
     ]

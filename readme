@@ -2,6 +2,4 @@ Steps to run the demo:
 
 1) npm install
 
-2) npm install -g @bazel/ibazel
-
 npm run serve (a browser opens up and serves a lazy loaded Rollup application)

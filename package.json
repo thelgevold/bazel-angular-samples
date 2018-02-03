@@ -5,16 +5,17 @@
     "serve": "ibazel run //src/apps/demo:prod_web"
   },
   "devDependencies": {
+    "@angular-devkit/build-optimizer": "0.0.36",
+    "@bazel/ibazel": "0.3.1",
+    "@ngtools/webpack": "1.9.3",
     "compression": "1.6.2",
     "lite-server": "2.3.0",
     "path": "0.12.7",
-    "webpack": "3.10.0",
-    "@angular-devkit/build-optimizer": "0.0.36",
-    "@ngtools/webpack": "1.9.3",
+    "rollup": "0.55.0",
+    "rollup-plugin-node-resolve": "3.0.0",
     "typescript": "2.6.2",
     "uglify-js": "3.2.2",
-    "rollup": "0.55.0",
-    "rollup-plugin-node-resolve": "3.0.0"
+    "webpack": "3.10.0"
   },
   "dependencies": {
     "angular": "~1.4.7",
