@@ -4,7 +4,7 @@ exports_files(["tsconfig.json"])
 exports_files(["index.html"])
 exports_files(["concat.js"])
 exports_files(["webpack.config.js"])
-
+exports_files(["angular.tsconfig.json"])
 
 filegroup(
     name = "node_modules",
@@ -32,6 +32,12 @@ filegroup(
         "node_modules/typescript/**",
     ]+ [
         "node_modules/uglify-js/**",
+    ]+ [
+       "node_modules/@angular-devkit/build-optimizer/**",
+    ]+ [
+       "node_modules/loader-utils/**",
+    ]+ [
+       "node_modules/source-map/**",
     ]),
 )
 
@@ -39,6 +45,7 @@ filegroup(
     name = "bootstrap_files",
     srcs = [
         "//:node_modules/zone.js/dist/zone.min.js",
+        "//:node_modules/@angular-devkit/build-optimizer",
         "//:api",
         "//:site.css",
         "//:index.html",

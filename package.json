@@ -6,11 +6,11 @@
     "build": "ibazel build //src/apps/demo:prod"
   },
   "devDependencies": {
-    "browserify": "14.5.0",
     "compression": "1.6.2",
     "lite-server": "2.3.0",
     "path": "0.12.7",
     "webpack": "3.10.0",
+    "@angular-devkit/build-optimizer": "0.0.36",
     "@ngtools/webpack": "1.9.3",
     "typescript": "2.6.2",
     "uglify-js": "3.2.2"
@@ -28,15 +28,10 @@
     "@angular/platform-browser": "6.0.0-beta.1",
     "@angular/platform-browser-dynamic": "6.0.0-beta.1",
     "@angular/platform-server": "6.0.0-beta.1",
-    "google-closure-compiler": "20171023.0.1",
     "@angular/router": "6.0.0-beta.1",
     "@angular/upgrade": "6.0.0-beta.1",
     "bootstrap": "~3.3.4",
     "core-js": "^2.4.1",
-    "rollup": "0.55.0",
-    "rollup-plugin-commonjs": "8.3.0",
-    "rollup-plugin-uglify": "2.0.1",
-    "rollup-plugin-node-resolve": "3.0.0",
     "rxjs": "5.5.6",
     "systemjs": "0.20.19",
     "zone.js": "0.8.6",
