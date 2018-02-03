@@ -3,10 +3,6 @@ import {ModuleWithProviders} from '@angular/core';
 
 import {DemoPage} from './shared-components/demo-page/demo-page';
 
-import {TreeViewDemo} from './shared-components/tree-view/tree-view-demo';
-import {GridDemo} from './shared-components/grid/grid-demo';
-import {CountryDemo} from './shared-components/lazy-loaded-tree-view/country-demo';
-
 const routes: Routes = [
   {
     path: '',
@@ -18,12 +14,10 @@ const routes: Routes = [
     
     component: DemoPage,
     children: [
-     { path: 'spreadsheet', loadChildren: './src/apps/demo/spreadsheet.module#SpreadsheetModule'},
-    
-      { path: 'treeview', component: TreeViewDemo},
-      { path: 'grid', component: GridDemo},
+      { path: 'spreadsheet', loadChildren: './src/apps/demo/spreadsheet.module#SpreadsheetModule'},
+      { path: 'treeview', loadChildren: './src/apps/demo/tree-view.module#TreeViewModule'},
       { path: 'survey', loadChildren: './src/apps/demo/survey.module#SurveyModule'},
-      { path: 'countries', component: CountryDemo}
+      { path: 'countries', loadChildren: './src/apps/demo/lazy-loaded-tree-view.module#LazyLoadedTreeViewModule'}
     ]
   }
 ];

@@ -7,12 +7,9 @@ import {AppComponent} from './app.component';
 import {routing} from './app.routes';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
-import {FeatureModules} from './feature.modules';
-
 @NgModule({
   imports: [BrowserModule,
-            routing,
-            FeatureModules
+            routing
   ],
   declarations: [AppComponent],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],

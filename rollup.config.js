@@ -6,6 +6,8 @@ const base = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/angu
 const main = `${base}/apps/demo/main.js`;
 const spreadsheet = `${base}/apps/demo/shared-components/spreadsheet/spreadsheet.module.ngfactory.js`;
 const form = `${base}/apps/demo/shared-components/survey/survey.module.ngfactory.js`;
+const treeview = `${base}/apps/demo/shared-components/tree-view/tree-view.module.ngfactory.js`;
+const lazyTreeview = `${base}/apps/demo/shared-components/lazy-loaded-tree-view/lazy-loaded-tree-view.module.ngfactory.js`;
 
 const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/rxjs/`;
   
@@ -18,7 +20,7 @@ class ResolveFESM2015 {
     }
 
     if (importee.startsWith('rxjs')) {
-      let esm = importee.replace('rxjs/', '');
+      const esm = importee.replace('rxjs/', '');
       return `${baseRxJs}${esm}.js`;
     }
   }
@@ -41,7 +43,9 @@ export default {
   output: {format: 'iife'},
   input: [main,
           spreadsheet,
-          form
+          treeview,
+          form,
+          lazyTreeview
   ],
   experimentalCodeSplitting: true,
   experimentalDynamicImport: true,

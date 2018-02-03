@@ -17,7 +17,6 @@ import {Location} from '@angular/common';
             <a [class.active]="getLinkStyle('/demo/countries')" [routerLink]="['/demo/countries']" class="list-group-item">Lazy Loaded Tree View</a>
             <a [class.active]="getLinkStyle('/demo/survey')" [routerLink]="['/demo/survey']" class="list-group-item">Dynamic Form</a>
             <a [class.active]="getLinkStyle('/demo/treeview')" [routerLink]="['/demo/treeview']" class="list-group-item">Recursive tree view</a>
-            <a [class.active]="getLinkStyle('/demo/grid')" [routerLink]="['/demo/grid']" class="list-group-item">Data Grid</a>
         </div>
 
         <div class="col-md-9">
