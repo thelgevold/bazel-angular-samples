@@ -14,4 +14,7 @@ module.exports = {
       'angular_samples/src/apps/demo': `${es2015Root}`
     }
   },
+  plugins: [
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ]
 }
