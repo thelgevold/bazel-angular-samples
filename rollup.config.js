@@ -8,20 +8,20 @@ const spreadsheet = `${base}/apps/demo/shared-components/spreadsheet/spreadsheet
 
 const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/rxjs/`;
   
-  class ResolveFESM2015 {
-    
-    resolveId(importee, importer) {
-      if(importee.startsWith('@angular')) {
-        const pkg = importee.replace('@angular', '');
-        return `${__dirname}/node_modules/${importee}/esm2015/${pkg}.js`;
-      }
+class ResolveFESM2015 {
+  
+  resolveId(importee, importer) {
+    if(importee.startsWith('@angular')) {
+      const pkg = importee.replace('@angular', '');
+      return `${__dirname}/node_modules/${importee}/esm2015/${pkg}.js`;
+    }
 
-      if (importee.startsWith('rxjs')) {
-        let esm = importee.replace('rxjs/', '');
-        return `${baseRxJs}${esm}.js`;
-      }
+    if (importee.startsWith('rxjs')) {
+      let esm = importee.replace('rxjs/', '');
+      return `${baseRxJs}${esm}.js`;
     }
   }
+}
 
 
 class NormalizePaths {
