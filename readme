@@ -4,4 +4,4 @@ Steps to run the demo:
 
 2) npm install -g @bazel/ibazel
 
-npm run serve (a browser opens up on localhost:3000)
+npm run serve (a browser opens up on localhost:3000 and serves a Webpack bundled application)
