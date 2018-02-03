@@ -5,7 +5,6 @@ import {DemoPage} from './shared-components/demo-page/demo-page';
 
 import {TreeViewDemo} from './shared-components/tree-view/tree-view-demo';
 import {GridDemo} from './shared-components/grid/grid-demo';
-import {SurveyDemo} from './shared-components/survey/survey-demo';
 import {CountryDemo} from './shared-components/lazy-loaded-tree-view/country-demo';
 
 const routes: Routes = [
@@ -23,7 +22,7 @@ const routes: Routes = [
     
       { path: 'treeview', component: TreeViewDemo},
       { path: 'grid', component: GridDemo},
-      { path: 'survey', component:SurveyDemo},
+      { path: 'survey', loadChildren: './src/apps/demo/survey.module#SurveyModule'},
       { path: 'countries', component: CountryDemo}
     ]
   }

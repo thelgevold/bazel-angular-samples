@@ -5,6 +5,7 @@ const base = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/angu
 
 const main = `${base}/apps/demo/main.js`;
 const spreadsheet = `${base}/apps/demo/shared-components/spreadsheet/spreadsheet.module.ngfactory.js`;
+const form = `${base}/apps/demo/shared-components/survey/survey.module.ngfactory.js`;
 
 const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/rxjs/`;
   
@@ -39,8 +40,8 @@ class NormalizePaths {
 export default {
   output: {format: 'iife'},
   input: [main,
-          spreadsheet
-
+          spreadsheet,
+          form
   ],
   experimentalCodeSplitting: true,
   experimentalDynamicImport: true,

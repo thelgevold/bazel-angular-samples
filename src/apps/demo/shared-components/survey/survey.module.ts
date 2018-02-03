@@ -1,11 +1,14 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
+import {RouterModule} from '@angular/router';
 
 import {Survey} from './survey';
 import {SurveyDemo} from './survey-demo';
 
 @NgModule({
-  imports: [SharedModule],
+  imports: [SharedModule,
+    RouterModule.forChild([{path: '', component: SurveyDemo}])
+  ],
   declarations: [Survey, SurveyDemo]    
 })
 export class SurveyModule {}
