@@ -5,7 +5,7 @@ import {Http,Response} from '@angular/http';
 import {TreeNode} from '../tree-node';
 import {treeNodeReducer} from './tree-node-reducer';
 
-import 'rxjs/add/operator/map';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class Store{
@@ -27,8 +27,9 @@ export class Store{
       }
       else {
         this._http
-            .get(action.url)
-            .map((res:Response) => res.json())
+            .get(action.url).pipe(
+              map((res:Response) => res.json())
+            )
             .subscribe(res => {
               this.nodes[action.key] = treeNodeReducer(res, action);
               this.treeNodes[action.key].next(this.nodes[action.key]);

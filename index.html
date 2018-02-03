@@ -2,6 +2,8 @@
 <head>
   <title>Angular Demos</title>
 
+  <script src="node_modules/systemjs/dist/system.src.js"></script>
+
   <script src="node_modules/zone.js/dist/zone.min.js"></script>
   
   <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -13,10 +15,13 @@
 <div class="container">  
   <h1>Webpack 3 Demo</h1>
 </div>
+
+
+<script>
+  System.import('src/apps/demo/main.js');
+</script>
+
 <demo-app></demo-app>
-
-<script src="src/apps/demo/prod.min.js"></script>
-
 </body>
 
 </html>
