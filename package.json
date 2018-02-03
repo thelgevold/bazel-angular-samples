@@ -2,16 +2,18 @@
   "name": "angular2-poc",
   "scripts": {
     "postinstall": "cp router_state.d.ts node_modules/@angular/router/src && ngc -p angular.tsconfig.json",
-    "serve": "ibazel run //src/apps/demo:prod_web"
+    "serve": "ibazel run //src/apps/demo:prod_web",
+    "build": "ibazel build //src/apps/demo:prod"
   },
   "devDependencies": {
     "browserify": "14.5.0",
     "compression": "1.6.2",
     "lite-server": "2.3.0",
     "path": "0.12.7",
-    "typescript": "2.4.2",
     "webpack": "3.10.0",
-    "@ngtools/webpack": "1.9.3"
+    "@ngtools/webpack": "1.9.3",
+    "typescript": "2.6.2",
+    "uglify-js": "3.2.2"
   },
   "dependencies": {
     "angular": "~1.4.7",

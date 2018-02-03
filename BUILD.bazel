@@ -28,6 +28,10 @@ filegroup(
         "node_modules/lite-server/**",
     ]+ [
         "node_modules/webpack/**",
+    ]+ [
+        "node_modules/typescript/**",
+    ]+ [
+        "node_modules/uglify-js/**",
     ]),
 )
 
@@ -38,6 +42,7 @@ filegroup(
         "//:api",
         "//:site.css",
         "//:index.html",
+        "//:bs-config.js",
         "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
         "//:node_modules/jquery-ui-dist/jquery-ui.min.js",
         "//:node_modules/jquery/dist/jquery.min.js"

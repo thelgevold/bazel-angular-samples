@@ -61,6 +61,16 @@ nodejs_binary(
     ]
 )
 
+nodejs_binary(
+    name = "es5",
+    entry_point = "typescript/bin/tsc"
+)
+
+nodejs_binary(
+    name = "uglify",
+    entry_point = "uglify-js/bin/uglifyjs"
+)
+
 load(":webpack.bzl", "webpack")
 
 webpack(
@@ -73,6 +83,6 @@ nodejs_binary(
     entry_point = "lite-server/bin/lite-server",
     data = [
         "//:bootstrap_files",
-        ":prod.js"
+        ":prod.min.js"
     ]
 )
