@@ -1,8 +1,6 @@
 import {Component} from '@angular/core';
 
-import {HashLocationStrategy, LocationStrategy, Location} from '@angular/common';
-
-declare var System:any;
+import {Location} from '@angular/common';
 
 @Component(
   {
@@ -30,15 +28,15 @@ declare var System:any;
 
 export class AppComponent {
 
-  constructor(public location: Location) {
-  }
+  constructor(public location: Location) {}
 
   getLinkStyle(path) {
 
-    if(path === this.location.path()){
+    if(path === this.location.path()) {
       return true;
     }
-    else if(path.length > 0){
+
+    else if(path.length > 0) {
       return this.location.path().indexOf(path) > -1;
     }
   }
