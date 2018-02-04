@@ -8,7 +8,7 @@ import {Location} from '@angular/common';
 
     <div class="jumbotron">
         <h1>Angular sample components</h1>
-        <p>Current version: Angular 6.0.0 - Beta 1</p>
+        <p>Current version: Angular 6.0.0 - Beta 2</p>
     </div>
 
     <div>
