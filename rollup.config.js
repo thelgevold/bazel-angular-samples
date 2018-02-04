@@ -3,15 +3,17 @@ const nodeResolve = require('rollup-plugin-node-resolve');
 
 const es2015 = process.argv[9];
 const base = `${__dirname}/${es2015}/angular_samples/src`;
-const lazy = `${base}/apps/demo/shared-components`;
 
-const main = `${base}/apps/demo/main.js`;
-const spreadsheet = `${lazy}/spreadsheet/spreadsheet.module.ngfactory.js`;
-const form = `${lazy}/survey/survey.module.ngfactory.js`;
-const treeview = `${lazy}/tree-view/tree-view.module.ngfactory.js`;
-const lazyTreeview = `${lazy}/lazy-loaded-tree-view/lazy-loaded-tree-view.module.ngfactory.js`;
+const entryPoint = `${base}/apps/demo/main.js`;
 
 const baseRxJs = `${__dirname}/${es2015}/rxjs/`;
+
+const modules = [
+  'shared-components/spreadsheet/spreadsheet.module',
+  'shared-components/survey/survey.module',
+  'shared-components/tree-view/tree-view.module',
+  'shared-components/lazy-loaded-tree-view/lazy-loaded-tree-view.module'
+].map(m => `${base}/apps/demo/${m}.ngfactory.js`)
 
 // Resolves Angular and RxJs to ESM distros
 class ResolveFESM2015 {
@@ -44,11 +46,8 @@ class NormalizePaths {
 
 export default {
   output: {format: 'iife'},
-  input: [main,
-          spreadsheet,
-          treeview,
-          form,
-          lazyTreeview
+  input: [entryPoint,
+          ...modules
   ],
   experimentalCodeSplitting: true,
   experimentalDynamicImport: true,
