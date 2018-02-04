@@ -16,12 +16,6 @@ ng_module(
     ]
 )
 
-load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
-devmode_js_sources(
-    name = "devsources",
-    deps = [":demo"],
-)
-
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
 load(":es6.bzl", "es6")
