@@ -1,17 +1,17 @@
 const rollup = require('rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
-const base = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/angular_samples/src`;
+const es2015 = `bazel-out/host/bin/src/apps/demo/prod_source.es6`;
+const base = `${__dirname}/${es2015}/angular_samples/src`;
 const lazy = `${base}/apps/demo/shared-components`;
 
-// lazy modules
 const main = `${base}/apps/demo/main.js`;
 const spreadsheet = `${lazy}/spreadsheet/spreadsheet.module.ngfactory.js`;
 const form = `${lazy}/survey/survey.module.ngfactory.js`;
 const treeview = `${lazy}/tree-view/tree-view.module.ngfactory.js`;
 const lazyTreeview = `${lazy}/lazy-loaded-tree-view/lazy-loaded-tree-view.module.ngfactory.js`;
 
-const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/rxjs/`;
+const baseRxJs = `${__dirname}/${es2015}/rxjs/`;
 
 // Resolves Angular and RxJs to ESM distros
 class ResolveFESM2015 {

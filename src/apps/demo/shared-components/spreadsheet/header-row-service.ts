@@ -1,6 +1,6 @@
 export class HeaderRowService{
 
-    static createHeader(length:Number){
+    static createHeader(length:Number) {
         const alpha = 'abcdefghijklmnopqrstuvwxyz';
 
         let headerLength = 1;
