@@ -51,11 +51,9 @@ export default {
   input: [entryPoint, ...modules],
   experimentalCodeSplitting: true,
   experimentalDynamicImport: true,
-  plugins:
-      [
-        new ResolveFESM2015(), 
-        new NormalizePaths(),
-        nodeResolve({jsnext: true, module: true}),
-      ]
-
+  plugins: [
+    new ResolveFESM2015(), 
+    new NormalizePaths(),
+    nodeResolve({jsnext: true, module: true}),
+  ]
 }

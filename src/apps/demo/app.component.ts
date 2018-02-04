@@ -23,7 +23,7 @@ import {Location} from '@angular/common';
 </div>
 <router-outlet></router-outlet>
 `
-  })
+})
 
 
 export class AppComponent {
