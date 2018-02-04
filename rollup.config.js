@@ -2,7 +2,10 @@ const rollup = require('rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
 const es2015 = process.argv[9];
-const base = `${__dirname}/${es2015}/angular_samples/src`;
+const workspace = process.argv[11];
+const sourceRoot = process.argv[13];
+
+const base = `${__dirname}/${es2015}/${workspace}/${sourceRoot}`;
 
 const entryPoint = `${base}/apps/demo/main.js`;
 
@@ -34,7 +37,7 @@ class ResolveFESM2015 {
 // Normalize import paths in ngfactories
 class NormalizePaths {
   resolveId(importee, importer) {
-    const absolutePath = ['angular_samples/src', 'src'];
+    const absolutePath = [`${workspace}/${sourceRoot}`, sourceRoot];
 
     for (let i = 0; i < absolutePath.length; i++) {
       if (importee.startsWith(absolutePath[i])) {

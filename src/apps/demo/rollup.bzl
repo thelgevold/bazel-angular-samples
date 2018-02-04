@@ -4,15 +4,16 @@ def _rollup(ctx):
   rollupConfig = "{0}/rollup.config.js".format(baseFolder)
 
   es2105SourceFolder = "bazel-out/host/bin/{0}prod_source.es6".format(ctx.build_file_path.replace("BUILD.bazel", ""))
-
-  print(es2105SourceFolder)
+  sourceRoot = ctx.build_file_path.split("/")[0]
 
   args = ["--config", rollupConfig]
   args += ["--output.dir", ctx.outputs.bundle_es6_main.path.replace("main.js", "")]
   args += ["--output.format", "cjs"]
   args += ["--es6", es2105SourceFolder]
- 
-  print(ctx.bin_dir.path)
+  args += ["--workspace", ctx.workspace_name]
+  args += ["--sourceRoot", sourceRoot]
+
+
   print(ctx.build_file_path)
 
   ctx.action(
