@@ -2,18 +2,18 @@ const rollup = require('rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
 const base = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/angular_samples/src`;
-
-const main = `${base}/apps/demo/main.js`;
+const lazy = `${base}/apps/demo/shared-components`;
 
 // lazy modules
-const spreadsheet = `${base}/apps/demo/shared-components/spreadsheet/spreadsheet.module.ngfactory.js`;
-const form = `${base}/apps/demo/shared-components/survey/survey.module.ngfactory.js`;
-const treeview = `${base}/apps/demo/shared-components/tree-view/tree-view.module.ngfactory.js`;
-const lazyTreeview = `${base}/apps/demo/shared-components/lazy-loaded-tree-view/lazy-loaded-tree-view.module.ngfactory.js`;
+const main = `${base}/apps/demo/main.js`;
+const spreadsheet = `${lazy}/spreadsheet/spreadsheet.module.ngfactory.js`;
+const form = `${lazy}/survey/survey.module.ngfactory.js`;
+const treeview = `${lazy}/tree-view/tree-view.module.ngfactory.js`;
+const lazyTreeview = `${lazy}/lazy-loaded-tree-view/lazy-loaded-tree-view.module.ngfactory.js`;
 
 const baseRxJs = `${__dirname}/bazel-out/host/bin/src/apps/demo/prod_source.es6/rxjs/`;
 
-// Reolves Angular and RxJs to ESM distros
+// Resolves Angular and RxJs to ESM distros
 class ResolveFESM2015 {
   
   resolveId(importee, importer) {
