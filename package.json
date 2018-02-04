@@ -1,15 +1,12 @@
 {
-  "name": "angular2-poc",
+  "name": "angular-poc",
   "scripts": {
     "postinstall": "cp router_state.d.ts node_modules/@angular/router/src && ngc -p angular.tsconfig.json",
     "build": "ibazel build //src/apps/demo:prod",
     "serve": "ibazel run //src/apps/demo:prod_web"
   },
   "devDependencies": {
-    "@angular-devkit/build-optimizer": "0.0.36",
     "@bazel/ibazel": "0.3.1",
-    "@ngtools/webpack": "1.9.3",
-    "compression": "1.6.2",
     "lite-server": "2.3.0",
     "path": "0.12.7",
     "rollup": "0.55.0",
@@ -19,7 +16,6 @@
     "webpack": "3.10.0"
   },
   "dependencies": {
-    "angular": "~1.4.7",
     "@angular/bazel": "angular/bazel-builds#d09df98b39658463fdfe3567b25a20cdd7130661",
     "@angular/animations": "6.0.0-beta.1",
     "@angular/common": "6.0.0-beta.1",
@@ -37,8 +33,6 @@
     "core-js": "^2.4.1",
     "rxjs": "5.5.6",
     "systemjs": "0.20.19",
-    "zone.js": "0.8.6",
-    "jquery": "3.3.1",
-    "jquery-ui-dist": "1.12.1"
+    "zone.js": "0.8.6"
   }
 }
