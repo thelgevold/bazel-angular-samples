@@ -48,10 +48,7 @@ class NormalizePaths {
 }
 
 export default {
-  output: {format: 'iife'},
-  input: [entryPoint,
-          ...modules
-  ],
+  input: [entryPoint, ...modules],
   experimentalCodeSplitting: true,
   experimentalDynamicImport: true,
   plugins:
