@@ -2,4 +2,6 @@ Steps to run the demo:
 
 1) npm install
 
-npm run serve (a browser opens up and serves a lazy loaded Rollup application)
+Build the sample: npm run build
+
+Run the sample: npm run serve
