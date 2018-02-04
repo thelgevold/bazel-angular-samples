@@ -15,7 +15,7 @@ import {Row} from './row';
         <tr *ngFor="let row of visibleRows">
             <td class="row-number-column">{{row.rowIndex}}</td>
             <td *ngFor="let col of row.columns">
-                <input  data-id="{{col.rowIndex}}-{{col.columnIndex}}" [value]="col.cellValue" (input)="col.cellValue = $event.target.value" (click)="model.selectColumn(col)" (keyup)="navigate($event)" />
+                <input  data-id="{{col.rowIndex}}-{{col.columnIndex}}" [value]="col.cellValue" (input)="col.cellValue = $event.target.value" (click)="model.selectColumn(col)" (keydown)="navigate($event)" />
             </td>
         </tr>
     </table>
