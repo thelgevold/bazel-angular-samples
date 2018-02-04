@@ -27,7 +27,6 @@ def _rollup(ctx):
 rollup = rule(
     implementation = _rollup,
     attrs = {
-        "entry_point": attr.string(mandatory=True),
         "rollup": attr.label(default=Label("//src/apps/demo:rollup"), executable=True, cfg="host", allow_files=True)
     },
     outputs = {

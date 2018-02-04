@@ -1,7 +1,7 @@
 export class Column{
-    cellValue:String;
+  cellValue:String;
 
-    constructor(public columnIndex,public rowIndex){
-        this.cellValue = '';
-    }
+  constructor(public columnIndex,public rowIndex){
+    this.cellValue = '';
+  }
 }
