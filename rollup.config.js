@@ -1,7 +1,7 @@
 const rollup = require('rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
-const es2015 = `bazel-out/host/bin/src/apps/demo/prod_source.es6`;
+const es2015 = process.argv[9];
 const base = `${__dirname}/${es2015}/angular_samples/src`;
 const lazy = `${base}/apps/demo/shared-components`;
 
