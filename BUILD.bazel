@@ -22,7 +22,9 @@ filegroup(
         "*.d.ts",
     ]] + [
         "node_modules/lite-server/**",
-        "node_modules/rollup/**"
+        "node_modules/rollup/**",
+        "node_modules/connect-history-api-fallback/**",
+        "node_modules/compression/**"
     ])
 )
 
@@ -50,6 +52,7 @@ filegroup(
     name = "bootstrap_files_prod",
     srcs = [
         "//:index-prod.html",
-        "//:bootstrap_files_shared"
+        "//:bootstrap_files_shared",
+        "//:bs-config.js"
     ]
 )

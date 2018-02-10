@@ -46,7 +46,7 @@ class NormalizePaths {
     }
   }
 }
-
+console.log('TESTING123');
 export default {
   input: [entryPoint, ...modules],
   experimentalCodeSplitting: true,

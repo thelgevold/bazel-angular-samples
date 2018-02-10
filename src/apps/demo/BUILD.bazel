@@ -30,7 +30,7 @@ nodejs_binary(
     name = "rollup",
     entry_point = "rollup/bin/rollup",
     data = [
-        "//:bootstrap_files",
+        "//:bootstrap_files_prod",
         "//:rollup.config.js",
         ":prod_source"
     ]
@@ -52,21 +52,14 @@ rollup(
     name = "prod"
 )
 
-genrule(
-    name = "index",
-    srcs = ["//:index-prod.html"],
-    outs = ["index.html"],
-    cmd = "cp $< $@",
-)
-
 nodejs_binary(
     name = "prod_web",
     entry_point = "lite-server/bin/lite-server",
     data = [
         "//:bootstrap_files_prod",
-        ":index",
-        ":prod_source"
-    ]
+        ":prod"
+    ],
+    node_modules = "//:node_modules"
 )
 
 ### DEV ###
