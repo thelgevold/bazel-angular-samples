@@ -1,0 +1,37 @@
+<html>
+<head>
+  <title>Angular Demos</title>
+
+  <base href="/">
+
+  <script src="node_modules/systemjs/dist/system.js"></script>
+
+  <script src="node_modules/zone.js/dist/zone.min.js"></script>
+  
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="site.css" rel="stylesheet">
+
+  <script>
+    (function (global) {
+    System.config({
+      packages: {
+        '.' : {}
+      }
+    });
+  })(this);
+    </script>
+</head>
+<body>
+<div class="container">  
+  <h1>Rollup With Lazy Loading</h1>
+</div>
+
+<script>
+  System.import('src/apps/demo/main.js');
+</script>
+
+<demo-app></demo-app>
+</body>
+
+</html>

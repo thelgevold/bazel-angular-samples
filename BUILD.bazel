@@ -27,13 +27,29 @@ filegroup(
 )
 
 filegroup(
-    name = "bootstrap_files",
+    name = "bootstrap_files_shared",
     srcs = [
         "//:node_modules/zone.js/dist/zone.min.js",
         "//:api",
         "//:site.css",
-        "//:index.html",
         "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
         "//:node_modules/systemjs/dist/system.js"
+    ]
+)
+
+filegroup(
+    name = "bootstrap_files_dev",
+    srcs = [
+        "//:index.html",
+        "//:systemjs-route-loader.js",
+        "//:bootstrap_files_shared"
+    ]
+)
+
+filegroup(
+    name = "bootstrap_files_prod",
+    srcs = [
+        "//:index-prod.html",
+        "//:bootstrap_files_shared"
     ]
 )

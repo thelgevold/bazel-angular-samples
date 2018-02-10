@@ -18,6 +18,7 @@ ng_module(
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
+### PROD ###
 load(":es6.bzl", "es6")
 
 es6(
@@ -51,11 +52,30 @@ rollup(
     name = "prod"
 )
 
+genrule(
+    name = "index",
+    srcs = ["//:index-prod.html"],
+    outs = ["index.html"],
+    cmd = "cp $< $@",
+)
+
 nodejs_binary(
     name = "prod_web",
     entry_point = "lite-server/bin/lite-server",
     data = [
-        "//:bootstrap_files",
-        ":prod"
+        "//:bootstrap_files_prod",
+        ":index",
+        ":prod_source"
+    ]
+)
+
+### DEV ###
+
+nodejs_binary(
+    name = "dev_web",
+    entry_point = "lite-server/bin/lite-server",
+    data = [
+        "//:bootstrap_files_dev",
+        ":prod_source"
     ]
 )
