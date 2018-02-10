@@ -2,9 +2,6 @@ Steps to run the demo:
 
 1) npm install
 
-Build the sample: npm run build
+Dev mode: npm run serve-Dev
 
-Run the sample: npm run serve
-
-Blog Post:
-http://www.syntaxsuccess.com/viewarticle/angular-lazy-loading-with-bazel-and-rollup
+Prod mode: npm run serve-prod
