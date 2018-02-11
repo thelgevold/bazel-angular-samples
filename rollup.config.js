@@ -12,10 +12,15 @@ const entryPoint = `${base}/apps/demo/main.js`;
 const baseRxJs = `${__dirname}/${es2015}/rxjs/`;
 
 const modules = [
-  'shared-components/spreadsheet/spreadsheet.module',
-  'shared-components/survey/survey.module',
-  'shared-components/tree-view/tree-view.module',
-  'shared-components/lazy-loaded-tree-view/lazy-loaded-tree-view.module'
+  'airplane/team0/team0.module',
+  'airplane/team1/team1.module',
+  'airplane/team2/team2.module',
+  'airplane/team3/team3.module',
+  'airplane/team4/team4.module',
+  'airplane/team5/team5.module',
+  'airplane/team6/team6.module',
+  'airplane/team7/team7.module',
+  'airplane/team9/team9.module'
 ].map(m => `${base}/apps/demo/${m}.ngfactory.js`)
 
 // Resolves Angular and RxJs to ESM distros

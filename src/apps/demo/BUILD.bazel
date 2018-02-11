@@ -5,14 +5,9 @@ load("@angular//:index.bzl", "ng_module")
 ng_module(
     name = "demo",
     srcs = glob(["*.ts"]),
-    tsconfig = ":tsconfig.json",
+    tsconfig = "//:tsconfig.json",
     deps = ["@rxjs", 
-            "//src/apps/demo/shared-components/demo-page:demopage",
-            "//src/apps/demo/shared-components/shared",
-            "//src/apps/demo/shared-components/spreadsheet",
-            "//src/apps/demo/shared-components/tree-view:treeview",
-            "//src/apps/demo/shared-components/lazy-loaded-tree-view:lazytree",
-            "//src/apps/demo/shared-components/survey:survey"
+            "//src/apps/demo/airplane:airplane"
     ]
 )
 

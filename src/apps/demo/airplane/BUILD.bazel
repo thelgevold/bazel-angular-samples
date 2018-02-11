@@ -1,0 +1,47 @@
+
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+ng_module(
+    name = "airplane",
+    srcs = ["app.module.ts", "app.component.ts", "app.routes.ts"],
+    deps = [
+        "@rxjs",
+        "//src/apps/demo/shared:logo",
+        "//src/apps/demo/airplane/team0",
+        "//src/apps/demo/airplane/team1",
+        "//src/apps/demo/airplane/team2",
+        "//src/apps/demo/airplane/team3",
+        "//src/apps/demo/airplane/team4",
+        "//src/apps/demo/airplane/team5",
+        "//src/apps/demo/airplane/team6",
+        "//src/apps/demo/airplane/team7",
+        #"//src/apps/demo/airplane/team8",
+        "//src/apps/demo/airplane/team9"
+    ],
+    tsconfig = "//:tsconfig.json",
+)
+
+load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
+devmode_js_sources(
+    name = "devsources",
+    deps = [":airplane"],
+)
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+
+nodejs_binary(
+    name = "devserver",
+    entry_point = "com_bigcorp/airplane/devserver.js",
+    data = [
+        ":index.html",
+        ":devsources",
+        # Seems like this should be included in the files[] in the :devsources
+        ":devsources.MF",
+        ":devserver.js",
+        ":patch-rxjs-amd.js",
+    ],
+    # Tell ibazel not to re-start the server under 'ibazel run'
+    # It should just re-build the data[]
+    tags = ["IBAZEL_MAGIC_TAG"],
+)
