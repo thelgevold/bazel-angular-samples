@@ -16,7 +16,7 @@ ng_module(
         "//src/apps/demo/airplane/team5",
         "//src/apps/demo/airplane/team6",
         "//src/apps/demo/airplane/team7",
-        #"//src/apps/demo/airplane/team8",
+        "//src/apps/demo/airplane/team8",
         "//src/apps/demo/airplane/team9"
     ],
     tsconfig = "//:tsconfig.json",

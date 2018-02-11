@@ -11,9 +11,8 @@ filegroup(
         ext,
     ]) for pkg in [
         "@angular",
-        "protractor",
         "tsickle",
-        "tsutils",
+        #"tsutils",
         "typescript",
         "@types",
     ] for ext in [
@@ -23,8 +22,7 @@ filegroup(
     ]] + [
         "node_modules/lite-server/**",
         "node_modules/rollup/**",
-        "node_modules/connect-history-api-fallback/**",
-        "node_modules/compression/**"
+        "node_modules/connect-history-api-fallback/**"
     ])
 )
 
@@ -32,10 +30,7 @@ filegroup(
     name = "bootstrap_files_shared",
     srcs = [
         "//:node_modules/zone.js/dist/zone.min.js",
-        "//:api",
-        "//:site.css",
         "//:tsconfig.json",
-        "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
         "//:node_modules/systemjs/dist/system.js"
     ]
 )

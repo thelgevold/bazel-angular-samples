@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'team5', loadChildren: './src/apps/demo/team5.module#Module_airplane_team5'},
   { path: 'team6', loadChildren: './src/apps/demo/team6.module#Module_airplane_team6'},
   { path: 'team7', loadChildren: './src/apps/demo/team7.module#Module_airplane_team7'},
+  { path: 'team8', loadChildren: './src/apps/demo/team8.module#Module_airplane_team8'},
   { path: 'team9', loadChildren: './src/apps/demo/team9.module#Module_airplane_team9'}
 ];
 

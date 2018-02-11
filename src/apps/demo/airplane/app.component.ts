@@ -15,6 +15,7 @@ import {Component} from '@angular/core';
           <div><a [routerLink]="['/team5']">Team5</a></div>
           <div><a [routerLink]="['/team6']">Team6</a></div>
           <div><a [routerLink]="['/team7']">Team7</a></div>
+          <div><a [routerLink]="['/team8']">Team7</a></div>
           <div><a [routerLink]="['/team9']">Team9</a></div>
         </div>
 

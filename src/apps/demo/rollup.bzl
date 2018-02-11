@@ -28,6 +28,7 @@ def _rollup(ctx):
                  ctx.outputs.bundle_es6_team5,
                  ctx.outputs.bundle_es6_team6,
                  ctx.outputs.bundle_es6_team7,
+                 ctx.outputs.bundle_es6_team8,
                  ctx.outputs.bundle_es6_team9,
 
                  ctx.outputs.bundle_es6_chunk1,
@@ -57,6 +58,7 @@ rollup = rule(
         "bundle_es6_team5": "team5.module.ngfactory.js",
         "bundle_es6_team6": "team6.module.ngfactory.js",
         "bundle_es6_team7": "team7.module.ngfactory.js",
+        "bundle_es6_team8": "team8.module.ngfactory.js",
         "bundle_es6_team9": "team9.module.ngfactory.js"
     }
 )

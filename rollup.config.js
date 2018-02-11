@@ -20,6 +20,7 @@ const modules = [
   'airplane/team5/team5.module',
   'airplane/team6/team6.module',
   'airplane/team7/team7.module',
+  'airplane/team8/team8.module',
   'airplane/team9/team9.module'
 ].map(m => `${base}/apps/demo/${m}.ngfactory.js`)
 
@@ -51,7 +52,7 @@ class NormalizePaths {
     }
   }
 }
-console.log('TESTING123');
+
 export default {
   input: [entryPoint, ...modules],
   experimentalCodeSplitting: true,
