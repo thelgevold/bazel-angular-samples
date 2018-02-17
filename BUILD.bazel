@@ -38,7 +38,7 @@ filegroup(
 filegroup(
     name = "bootstrap_files_dev",
     srcs = [
-        "//:index.html",
+        "//:index-dev.html",
         "//:systemjs-route-loader.js",
         "//:bootstrap_files_shared"
     ]
@@ -47,7 +47,7 @@ filegroup(
 filegroup(
     name = "bootstrap_files_prod",
     srcs = [
-        "//:index-prod.html",
+        "//:index.html",
         "//:bootstrap_files_shared",
         "//:bs-config.js"
     ]
