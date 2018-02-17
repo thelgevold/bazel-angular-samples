@@ -14,12 +14,11 @@ def _rollup(ctx):
   args += ["--es6", es2105SourceFolder]
   args += ["--workspace", ctx.workspace_name]
   args += ["--sourceRoot", sourceRoot]
+  args += ["--entryPoint", ctx.attr.entry_point]
 
   ctx.action(
       executable = ctx.executable.rollup,
-      outputs = [
-                 output_dir
-                ],
+      outputs = [output_dir],
       arguments = args
   )
 
@@ -28,9 +27,7 @@ def _rollup(ctx):
 rollup = rule(
     implementation = _rollup,
     attrs = {
+        "entry_point": attr.string(mandatory=True),
         "rollup": attr.label(default=Label("//src/apps/demo:rollup"), executable=True, cfg="host", allow_files=True)
-    },
-    outputs = {
-       
     }
 )

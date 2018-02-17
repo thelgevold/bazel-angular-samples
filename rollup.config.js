@@ -7,7 +7,7 @@ const sourceRoot = process.argv[13];
 
 const base = `${__dirname}/${es2015}/${workspace}/${sourceRoot}`;
 
-const entryPoint = `${base}/apps/demo/main.js`;
+const entryPoint = `${base}/${process.argv[15]}`;
 
 const baseRxJs = `${__dirname}/${es2015}/rxjs/`;
 

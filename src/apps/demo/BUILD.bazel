@@ -44,7 +44,8 @@ nodejs_binary(
 load(":rollup.bzl", "rollup")
 
 rollup(
-    name = "prod"
+    name = "prod",
+    entry_point = "apps/demo/main.js"
 )
 
 nodejs_binary(
