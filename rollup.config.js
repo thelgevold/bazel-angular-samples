@@ -1,15 +1,13 @@
 const rollup = require('rollup');
 const nodeResolve = require('rollup-plugin-node-resolve');
 
-const es2015 = process.argv[9];
 const workspace = process.argv[11];
 const sourceRoot = process.argv[13];
 
-const base = `${__dirname}/${es2015}/${workspace}/${sourceRoot}`;
+const baseSrc = `${__dirname}/${process.argv[17]}`;
+const baseRxJs = `${__dirname}/${process.argv[19]}`;
 
-const entryPoint = `${base}/${process.argv[15]}`;
-
-const baseRxJs = `${__dirname}/${es2015}/rxjs/`;
+const entryPoint = `${baseSrc}/${process.argv[15]}`;
 
 const modules = [
   'airplane/team0/team0.module',
@@ -22,7 +20,7 @@ const modules = [
   'airplane/team7/team7.module',
   'airplane/team8/team8.module',
   'airplane/team9/team9.module'
-].map(m => `${base}/apps/demo/${m}.ngfactory.js`)
+].map(m => `${baseSrc}/apps/demo/${m}.ngfactory.js`)
 
 // Resolves Angular and RxJs to ESM distros
 class ResolveFESM2015 {
@@ -35,7 +33,7 @@ class ResolveFESM2015 {
 
     if (importee.startsWith('rxjs')) {
       const esm = importee.replace('rxjs/', '');
-      return `${baseRxJs}${esm}.js`;
+      return `${baseRxJs}/${esm}.js`;
     }
   }
 }
@@ -47,7 +45,7 @@ class NormalizePaths {
 
     for (let i = 0; i < absolutePath.length; i++) {
       if (importee.startsWith(absolutePath[i])) {
-        return `${base}${importee.replace(absolutePath[i], '')}.js`;
+        return `${baseSrc}${importee.replace(absolutePath[i], '')}.js`;
       }
     }
   }
