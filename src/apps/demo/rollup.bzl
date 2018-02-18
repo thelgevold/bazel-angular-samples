@@ -11,13 +11,20 @@ def _rollup(ctx):
 
   output_dir = ctx.actions.declare_directory("bundles.es6")
 
+  bundles = ""  
+  for e in ctx.attr.modules:
+    bundles +=  e + ","
+
+  print(bundles)
+
   args = ["--config", rollupConfig]
   args += ["--output.dir", output_dir.path]
   args += ["--output.format", "cjs"]
   args += ["--es6", es2105SourceFolder]
   args += ["--workspace", ctx.workspace_name]
   args += ["--sourceRoot", sourceRoot]
-  args += ["--entryPoint", ctx.attr.entry_point]
+  args += ["--modules", bundles]
+  args += ["--entry_point", ctx.attr.entry_point]
   args += ["--src", src]
   args += ["--rxjs", rxjs]
 
@@ -32,6 +39,7 @@ def _rollup(ctx):
 rollup = rule(
     implementation = _rollup,
     attrs = {
+        "modules": attr.string_list(mandatory = True),
         "entry_point": attr.string(mandatory=True),
         "rollup": attr.label(default=Label("//src/apps/demo:rollup"), executable=True, cfg="host", allow_files=True)
     }

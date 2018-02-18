@@ -4,7 +4,7 @@ package(default_visibility = ["//visibility:public"])
 load("@angular//:index.bzl", "ng_module")
 ng_module(
     name = "airplane",
-    srcs = ["app.module.ts", "app.component.ts", "app.routes.ts"],
+    srcs = ["app.module.ts", "app.component.ts", "app.routes.ts", "route-definitions.ts"],
     deps = [
         "@rxjs",
         "//src/apps/demo/shared:logo",

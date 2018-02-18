@@ -45,7 +45,19 @@ load(":rollup.bzl", "rollup")
 
 rollup(
     name = "prod",
-    entry_point = "apps/demo/main.js"
+    entry_point = "apps/demo/main.js",
+    modules = [
+                "apps/demo/airplane/team0/team0.module",
+                "apps/demo/airplane/team1/team1.module",
+                "apps/demo/airplane/team2/team2.module",
+                "apps/demo/airplane/team3/team3.module",
+                "apps/demo/airplane/team4/team4.module",
+                "apps/demo/airplane/team5/team5.module",
+                "apps/demo/airplane/team6/team6.module",
+                "apps/demo/airplane/team7/team7.module",
+                "apps/demo/airplane/team8/team8.module",
+                "apps/demo/airplane/team9/team9.module"
+    ]
 )
 
 nodejs_binary(
