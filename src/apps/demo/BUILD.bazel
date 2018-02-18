@@ -32,11 +32,6 @@ nodejs_binary(
 )
 
 nodejs_binary(
-    name = "es5",
-    entry_point = "typescript/bin/tsc"
-)
-
-nodejs_binary(
     name = "uglify",
     entry_point = "uglify-js/bin/uglifyjs"
 )
@@ -45,7 +40,7 @@ load(":rollup.bzl", "rollup")
 
 rollup(
     name = "prod",
-    entry_point = "apps/demo/main.js",
+    entry_point = "apps/demo/main",
     modules = [
                 "apps/demo/airplane/team0/team0.module",
                 "apps/demo/airplane/team1/team1.module",
@@ -68,15 +63,4 @@ nodejs_binary(
         ":prod"
     ],
     node_modules = "//:node_modules"
-)
-
-### DEV ###
-
-nodejs_binary(
-    name = "dev_web",
-    entry_point = "lite-server/bin/lite-server",
-    data = [
-        "//:bootstrap_files_dev",
-        ":prod_source"
-    ]
 )

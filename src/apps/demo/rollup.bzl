@@ -9,16 +9,14 @@ def _rollup(ctx):
   src = "{0}/{1}/{2}".format(es2105SourceFolder, ctx.workspace_name, sourceRoot) 
   rxjs = "{0}/rxjs".format(es2105SourceFolder)
 
-  output_dir = ctx.actions.declare_directory("bundles.es6")
+  output_dir_es6 = ctx.actions.declare_directory("bundles.es6")
 
-  bundles = ""  
+  bundles = ""
   for e in ctx.attr.modules:
     bundles +=  e + ","
-
-  print(bundles)
-
+  
   args = ["--config", rollupConfig]
-  args += ["--output.dir", output_dir.path]
+  args += ["--output.dir", output_dir_es6.path]
   args += ["--output.format", "cjs"]
   args += ["--es6", es2105SourceFolder]
   args += ["--workspace", ctx.workspace_name]
@@ -30,11 +28,11 @@ def _rollup(ctx):
 
   ctx.action(
       executable = ctx.executable.rollup,
-      outputs = [output_dir],
+      outputs = [output_dir_es6],
       arguments = args
   )
 
-  return DefaultInfo(runfiles=ctx.runfiles([output_dir]), files=depset([]))
+  return DefaultInfo(runfiles=ctx.runfiles([output_dir_es6]), files=depset([]))
 
 rollup = rule(
     implementation = _rollup,

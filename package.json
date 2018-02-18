@@ -3,20 +3,16 @@
   "scripts": {
     "postinstall": "cp router_state.d.ts node_modules/@angular/router/src && ngc -p angular.tsconfig.json",
     "build-prod": "ibazel build //src/apps/demo:prod",
-    "serve-prod": "ibazel run //src/apps/demo:prod_web",
-    "serve-dev": "ibazel run //src/apps/demo:dev_web"
+    "serve-prod": "ibazel run //src/apps/demo:prod_web"
   },
   "devDependencies": {
     "@bazel/ibazel": "0.3.1",
-    "connect-history-api-fallback": "^1.5.0",
-    "compression": "1.6.2",
     "lite-server": "2.3.0",
     "path": "0.12.7",
     "rollup": "0.55.0",
     "rollup-plugin-node-resolve": "3.0.0",
     "typescript": "2.6.2",
-    "uglify-js": "3.2.2",
-    "webpack": "3.10.0"
+    "uglify-js": "3.2.2"
   },
   "dependencies": {
     "@angular/bazel": "angular/bazel-builds#d09df98b39658463fdfe3567b25a20cdd7130661",
@@ -32,7 +28,6 @@
     "@angular/platform-server": "6.0.0-beta.2",
     "@angular/router": "6.0.0-beta.2",
     "@angular/upgrade": "6.0.0-beta.2",
-    "bootstrap": "~3.3.4",
     "core-js": "^2.4.1",
     "rxjs": "5.5.6",
     "systemjs": "0.20.19",

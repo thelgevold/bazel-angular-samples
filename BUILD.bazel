@@ -12,8 +12,6 @@ filegroup(
     ]) for pkg in [
         "@angular",
         "tsickle",
-        #"tsutils",
-        "typescript",
         "@types",
     ] for ext in [
         "*.js",
@@ -22,7 +20,8 @@ filegroup(
     ]] + [
         "node_modules/lite-server/**",
         "node_modules/rollup/**",
-        "node_modules/connect-history-api-fallback/**"
+        "node_modules/uglify-js/**",
+        "node_modules/typescript/**"
     ])
 )
 
@@ -36,19 +35,9 @@ filegroup(
 )
 
 filegroup(
-    name = "bootstrap_files_dev",
-    srcs = [
-        "//:index-dev.html",
-        "//:systemjs-route-loader.js",
-        "//:bootstrap_files_shared"
-    ]
-)
-
-filegroup(
     name = "bootstrap_files_prod",
     srcs = [
         "//:index.html",
-        "//:bootstrap_files_shared",
-        "//:bs-config.js"
+        "//:bootstrap_files_shared"
     ]
 )

@@ -4,6 +4,9 @@ export const ROUTE_DEFINITIONS = [
     redirectTo: '/team0',
     pathMatch: 'full'
   },
+
+  // TODO: This is currently pointing to the bundles created by Rollup (bundles.es6)
+  // The expection is likely to point to the original location of each ngModule 
   { path: 'team0', loadChildren: './src/apps/demo/bundles.es6/team0.module#Module_airplane_team0'},
   { path: 'team1', loadChildren: './src/apps/demo/bundles.es6/team1.module#Module_airplane_team1'},
   { path: 'team2', loadChildren: './src/apps/demo/bundles.es6/team2.module#Module_airplane_team2'},

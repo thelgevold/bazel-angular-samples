@@ -7,7 +7,7 @@ const sourceRoot = process.argv[13];
 const baseSrc = `${__dirname}/${process.argv[19]}`;
 const baseRxJs = `${__dirname}/${process.argv[21]}`;
 
-const entryPoint = `${baseSrc}/${process.argv[17]}`;
+const entryPoint = `${baseSrc}/${process.argv[17]}.js`;
 
 const modules = `${process.argv[15]}`.split(',')
                 .filter(m => m) 
