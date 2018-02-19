@@ -14,20 +14,13 @@ ng_module(
 load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
 ### PROD ###
-load(":es6.bzl", "es6")
-
-es6(
-    name = "prod_source",
-    deps = [":demo"],
-)
 
 nodejs_binary(
     name = "rollup",
     entry_point = "rollup/bin/rollup",
     data = [
         "//:bootstrap_files_prod",
-        "//:rollup.config.js",
-        ":prod_source"
+        "//:rollup.config.js"
     ]
 )
 
@@ -36,7 +29,7 @@ nodejs_binary(
     entry_point = "uglify-js/bin/uglifyjs"
 )
 
-load(":rollup.bzl", "rollup")
+load("//src/apps/demo/rollup:rollup.bzl", "rollup")
 
 rollup(
     name = "prod",
@@ -52,7 +45,8 @@ rollup(
                 "apps/demo/airplane/team7/team7.module",
                 "apps/demo/airplane/team8/team8.module",
                 "apps/demo/airplane/team9/team9.module"
-    ]
+    ],
+    deps = [":demo"]
 )
 
 nodejs_binary(
