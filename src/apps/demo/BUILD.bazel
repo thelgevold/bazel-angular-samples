@@ -1,4 +1,5 @@
 package(default_visibility = ["//visibility:public"])
+load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
 
 load("@angular//:index.bzl", "ng_module")
 
@@ -35,36 +36,34 @@ ng_module(
     ]
 )
 
-load("@build_bazel_rules_nodejs//internal:devmode_js_sources.bzl", "devmode_js_sources")
-devmode_js_sources(
-    name = "devsources",
+# Needed because the devserver only loads static files that appear under this
+# package.
+genrule(
+    name = "zone.js",
+    srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
+    outs = ["zone.min.js"],
+    cmd = "cp $< $@",
+)
+
+genrule(
+    name = "bootstrap",
+    srcs = ["//:node_modules/bootstrap/dist/css/bootstrap.min.css"],
+    outs = ["bootstrap.css"],
+    cmd = "cp $< $@",
+)
+
+STATIC_FILES = [
+    "index.html",
+    ":zone.js",
+    ":site.css",
+    ":bootstrap"
+]
+
+ts_devserver(
+    name = "devserver",
+    entry_module = "demo/src/apps/demo/main",
+    scripts = ["//:angular_bundles"],
+    serving_path = "/bundle.min.js",
+    static_files = STATIC_FILES,
     deps = [":demo"],
-)
-
-load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
-
-nodejs_binary(
-    name = "concat",
-    entry_point = "angular_samples/concat.js",
-    data = [
-        ":devsources",
-        ":devsources.MF",
-        "//:concat.js"
-    ],
-)
- 
-load(":dev-bundle.bzl", "dev")
-dev(
-    name = "bundle",
-    entryPoint = "src/apps/demo",
-    devsource = ":devsources.MF"
-) 
-
-nodejs_binary(
-    name = "web",
-    entry_point = "lite-server/bin/lite-server",
-    data = [
-        "//:bootstrap_files",
-        ":bundle.js"
-    ]
 )

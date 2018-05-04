@@ -1,20 +1,29 @@
 package(default_visibility = ["//visibility:public"])
 
 exports_files(["tsconfig.json"])
-exports_files(["index.html"])
-exports_files(["concat.js"])
 
-
+# NOTE: this will move to node_modules/BUILD in a later release
 filegroup(
     name = "node_modules",
+    # NB: rxjs is not in this list, because we build it from sources using the
+    # label @rxjs//:rxjs
     srcs = glob(["/".join([
         "node_modules",
         pkg,
         "**",
         ext,
     ]) for pkg in [
-        "@angular",
-        "protractor",
+        "@angular/animations",
+        "@angular/common",
+        "@angular/compiler-cli",
+        "@angular/core",
+        "@angular/forms",
+        "@angular/http",
+        "@angular/platform-browser",
+        "@angular/router",
+        "@nrwl",
+        "@ngrx",
+        "long",
         "tsickle",
         "tsutils",
         "typescript",
@@ -23,23 +32,60 @@ filegroup(
         "*.js",
         "*.json",
         "*.d.ts",
-    ]] + [
-        "node_modules/lite-server/**",
-    ]),
+    ]]),
+)
+
+ANGULAR_TESTING = [
+    "node_modules/@angular/*/bundles/*-testing.umd.js",
+    # We use AOT, so the compiler and the dynamic platform-browser should be
+    # visible only in tests
+    "node_modules/@angular/compiler/bundles/*.umd.js",
+    "node_modules/@angular/platform-browser-dynamic/bundles/*.umd.js",
+]
+
+# TODO: it's messy for users to need to specify the following
+# Angular dependency lists. It should live somewhere else.
+# See https://github.com/angular/angular/issues/21048
+
+filegroup(
+    name = "angular_bundles",
+    srcs = glob(
+        [
+            "node_modules/@angular/*/bundles/*.umd.js",
+
+            "node_modules/@ngrx/store/bundles/store.umd.js",
+            "node_modules/@ngrx/router-store/bundles/router-store.umd.js",
+            "node_modules/@ngrx/effects/bundles/effects.umd.js",
+
+            "node_modules/@nrwl/nx/bundles/nrwl-nx.umd.js",
+
+            "node_modules/bootstrap/dist/css/bootstrap.min.css"
+
+            
+        ],
+        exclude = ANGULAR_TESTING + [
+            "node_modules/@angular/bazel/**/*",
+            "node_modules/@angular/cli/**/*",
+            "node_modules/@angular/compiler-cli/**/*",
+            "node_modules/@angular/language-service/**/*",
+        ],
+    ),
 )
 
 filegroup(
-    name = "bootstrap_files",
+    name = "angular_test_bundles",
+    testonly = 1,
+    srcs = glob(ANGULAR_TESTING),
+)
+
+filegroup(
+    name = "angular_bootstrap_scripts",
+    # do not sort
     srcs = [
         "//:node_modules/zone.js/dist/zone.min.js",
-        "//:api",
-        "//:node_modules/systemjs/dist/system.src.js",
-        "//:site.css",
-        "//:index.html",
-        "//:node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "//:node_modules/jquery-ui-dist/jquery-ui.min.js",
-        "//:node_modules/jquery/dist/jquery.min.js",
-        "//:bs-config.js",
-        "//:systemjs-config.js"
-    ]
+        "//:node_modules/zone.js/dist/async-test.js",
+        "//:node_modules/zone.js/dist/sync-test.js",
+        "//:node_modules/zone.js/dist/proxy.min.js",
+        "//:node_modules/zone.js/dist/jasmine-patch.js",
+    ],
 )
