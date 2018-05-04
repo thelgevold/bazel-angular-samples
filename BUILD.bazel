@@ -1,6 +1,6 @@
 package(default_visibility = ["//visibility:public"])
 
-exports_files(["tsconfig.json"])
+exports_files(["tsconfig.json", "node_modules/bootstrap/dist/css/bootstrap.min.css"])
 
 # NOTE: this will move to node_modules/BUILD in a later release
 filegroup(
@@ -59,7 +59,7 @@ filegroup(
 
             "node_modules/@nrwl/nx/bundles/nrwl-nx.umd.js",
 
-            "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            
 
             
         ],
