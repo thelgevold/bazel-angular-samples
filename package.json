@@ -4,6 +4,8 @@
     "postinstall": "ngc -p angular.tsconfig.json",
     "build": "bazel build //src/apps/demo:prod",
     "server": "bazel run //src/apps/demo:prod_web",
+    "clear-web-container": "docker stop web && docker rm web",
+    "clear-web-image": "docker rmi caching_web",
     "start-remote-cache": "docker-compose -f caching/docker-compose.yml up",
     "clear-remote-cache": "npm run clear-web-container && npm run clear-web-image"
   },
