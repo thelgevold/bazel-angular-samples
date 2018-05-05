@@ -24,11 +24,6 @@ nodejs_binary(
     ]
 )
 
-nodejs_binary(
-    name = "uglify",
-    entry_point = "uglify-js/bin/uglifyjs"
-)
-
 load("//src/apps/demo/rollup:rollup.bzl", "rollup")
 
 rollup(

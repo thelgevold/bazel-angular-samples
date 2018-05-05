@@ -5,7 +5,7 @@ def bundle(ctx, es6Source):
   es2015SourceFolder = "dist/bin/{0}/prod.es6".format(ctx.build_file_path.replace("/BUILD.bazel", ""))
   sourceRoot = ctx.build_file_path.split("/")[0]
 
-  src = "{0}/{1}/{2}".format(es2015SourceFolder, ctx.workspace_name, sourceRoot) 
+  src = "{0}/{1}".format(es2015SourceFolder, sourceRoot) 
   rxjs = "{0}/rxjs".format(es2015SourceFolder)
 
   output_dir_es6 = ctx.actions.declare_directory("bundles.es6")
