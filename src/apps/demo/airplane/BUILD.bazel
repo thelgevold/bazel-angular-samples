@@ -7,8 +7,7 @@ ng_module(
     srcs = ["app.module.ts", "app.component.ts", "app.routes.ts", "route-definitions.ts"],
     deps = [
         "@rxjs",
-        "//src/apps/demo/shared:logo",
-        "//src/apps/demo/airplane/team0",
+         "//src/apps/demo/airplane/team0",
         "//src/apps/demo/airplane/team1",
         "//src/apps/demo/airplane/team2",
         "//src/apps/demo/airplane/team3",
