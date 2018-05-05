@@ -20,7 +20,6 @@ filegroup(
     ]] + [
         "node_modules/lite-server/**",
         "node_modules/rollup/**",
-        "node_modules/uglify-js/**",
         "node_modules/typescript/**"
     ])
 )

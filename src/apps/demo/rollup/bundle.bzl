@@ -6,8 +6,7 @@ def bundle(ctx, es6Source):
   sourceRoot = ctx.build_file_path.split("/")[0]
 
   src = "{0}/{1}".format(es2015SourceFolder, sourceRoot) 
-  rxjs = "{0}/rxjs".format(es2015SourceFolder)
-
+  
   output_dir_es6 = ctx.actions.declare_directory("bundles.es6")
 
   bundles = ""
@@ -23,7 +22,6 @@ def bundle(ctx, es6Source):
   args += ["--modules", bundles]
   args += ["--entry_point", ctx.attr.entry_point]
   args += ["--src", src]
-  args += ["--rxjs", rxjs]
 
   ctx.action(
     executable = ctx.executable.rollup,

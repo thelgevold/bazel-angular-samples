@@ -5,7 +5,6 @@ const workspace = process.argv[11];
 const sourceRoot = process.argv[13];
 
 const baseSrc = `${__dirname}/${process.argv[19]}`;
-const baseRxJs = `${__dirname}/${process.argv[21]}`;
 
 const entryPoint = `${baseSrc}/${process.argv[17]}.js`;
 
@@ -22,9 +21,8 @@ class ResolveFESM2015 {
       return `${__dirname}/node_modules/${importee}/esm2015/${pkg}.js`;
     }
 
-    if (importee.startsWith('rxjs')) {
-      const esm = importee.replace('rxjs/', '');
-      return `${baseRxJs}/${esm}.js`;
+    if (importee === 'rxjs') {
+      return `${__dirname}/dist/bin/src/apps/demo/prod.es6/external/rxjs/index.js`;
     }
   }
 }
