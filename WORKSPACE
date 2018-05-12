@@ -28,7 +28,7 @@ http_archive(
     sha256 = "4e40dd49ae7668d245c3107645f2a138660fcfd975b9310b91eda13f0c973953",
 )
 
-load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
+load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install")
 
 node_repositories(package_json = ["//:package.json"])
 
@@ -45,6 +45,11 @@ load("@io_bazel_rules_sass//sass:sass.bzl", "sass_repositories")
 
 sass_repositories()
 
+git_repository(
+    name = "angular",
+    remote = "https://github.com/angular/angular.git",
+    tag = "6.0.0"
+)
 
 ####################################
 # Fetch and install the TypeScript rules
@@ -76,12 +81,9 @@ go_register_toolchains()
 
 ####################################
 # Tell Bazel about some workspaces that were installed from npm.
-local_repository(
-    name = "angular",
-    path = "node_modules/@angular/bazel",
-)
 
 local_repository(
     name = "rxjs",
     path = "node_modules/rxjs/src",
 )
+

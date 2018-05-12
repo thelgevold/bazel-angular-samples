@@ -20,10 +20,10 @@ build:ci --noshow_progress
 
 # Write to cache
 build --experimental_remote_spawn_cache
-build --remote_http_cache=http://Torgeirs-MBP-2.home:9999/cache
+build --remote_http_cache=http://localhost:9999/cache
 
 run --experimental_remote_spawn_cache
-run --remote_http_cache=http://Torgeirs-MBP-2.home/cache
+run --remote_http_cache=http://localhost:9999/cache
 
 # Only read from cache
 #build --spawn_strategy=remote --genrule_strategy=remote

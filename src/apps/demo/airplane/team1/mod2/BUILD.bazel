@@ -1,5 +1,5 @@
 package(default_visibility = ["//visibility:public"])
-load("@angular//:index.bzl", "ng_module")
+load("@angular//packages/bazel:index.bzl", "ng_module")
 
 ng_module(
   name = "mod2",

@@ -1,13 +1,13 @@
 
 package(default_visibility = ["//visibility:public"])
 
-load("@angular//:index.bzl", "ng_module")
+load("@angular//packages/bazel:index.bzl", "ng_module")
 ng_module(
     name = "airplane",
     srcs = ["app.module.ts", "app.component.ts", "app.routes.ts", "route-definitions.ts"],
     deps = [
         "@rxjs",
-         "//src/apps/demo/airplane/team0",
+        "//src/apps/demo/airplane/team0",
         "//src/apps/demo/airplane/team1",
         "//src/apps/demo/airplane/team2",
         "//src/apps/demo/airplane/team3",

@@ -16,14 +16,30 @@
     "rollup": "0.55.0",
     "rollup-plugin-node-resolve": "3.0.0",
     "typescript": "2.7.2",
-    "uglify-js": "3.2.2"
+    "uglify-js": "3.2.2",
+    "@types/angularjs": "1.5.14-alpha",
+    "@types/base64-js": "1.2.5",
+    "@types/chai": "^4.1.2",
+    "@types/chokidar": "1.7.3",
+    "@types/diff": "^3.2.2",
+    "@types/fs-extra": "4.0.2",
+    "@types/hammerjs": "2.0.35",
+    "@types/jasmine": "2.2.22-alpha",
+    "@types/minimist": "^1.2.0",
+    "@types/node": "6.0.88",
+    "@types/selenium-webdriver": "3.0.7",
+    "@types/shelljs": "^0.7.8",
+    "@types/source-map": "^0.5.1",
+    "@types/systemjs": "0.19.32",
+    "tsickle": "^0.27.2"
   },
   "dependencies": {
-    "@angular/bazel": "6.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "6.0.0",
+    "systemjs": "0.20.19",
+    "zone.js": "0.8.26",
     "@angular/animations": "6.0.0",
     "@angular/common": "6.0.0",
-    "@angular/compiler": "6.0.0",
-    "@angular/compiler-cli": "6.0.0",
     "@angular/core": "6.0.0",
     "@angular/forms": "6.0.0",
     "@angular/http": "6.0.0",
@@ -32,9 +48,7 @@
     "@angular/platform-server": "6.0.0",
     "@angular/router": "6.0.0",
     "@angular/upgrade": "6.0.0",
-    "core-js": "^2.4.1",
-    "rxjs": "6.0.0",
-    "systemjs": "0.20.19",
-    "zone.js": "0.8.6"
+    "@angular/compiler": "6.0.0",
+    "@angular/compiler-cli": "6.0.0"
   }
 }

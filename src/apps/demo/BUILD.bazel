@@ -1,12 +1,12 @@
 package(default_visibility = ["//visibility:public"])
 
-load("@angular//:index.bzl", "ng_module")
+load("@angular//packages/bazel:index.bzl", "ng_module")
 
 ng_module(
     name = "demo",
     srcs = glob(["*.ts"]),
     tsconfig = "//:tsconfig.json",
-    deps = ["@rxjs", 
+    deps = ["@rxjs",
             "//src/apps/demo/airplane:airplane"
     ]
 )
@@ -17,7 +17,7 @@ load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
 
 nodejs_binary(
     name = "rollup",
-    entry_point = "rollup/bin/rollup",
+    entry_point = "rollup/dist/rollup",
     data = [
         "//:bootstrap_files_prod",
         "//:rollup.config.js"
@@ -46,7 +46,7 @@ rollup(
 
 nodejs_binary(
     name = "prod_web",
-    entry_point = "lite-server/bin/lite-server",
+    entry_point = "lite-server/index",
     data = [
         "//:bootstrap_files_prod",
         ":prod"
