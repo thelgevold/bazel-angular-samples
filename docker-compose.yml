@@ -1,0 +1,26 @@
+version: '3'
+
+networks:
+  corp:
+    driver: bridge
+
+services:
+  cache:
+    build: ./caching
+    container_name: "cache"
+    networks:
+      - corp
+    volumes:
+      - ./caching/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "9999:80"
+  airplane1: 
+    build: .
+    networks:
+      - corp
+    container_name: "airplane1"
+    volumes:
+      - ./src:/usr/src
+      - ./tools:/usr/tools
+    ports:
+      - "9001:3000"   

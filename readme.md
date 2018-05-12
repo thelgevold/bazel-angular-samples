@@ -2,4 +2,4 @@ Steps to run the demo:
 
 1) npm install
 
-Prod mode: npm run server
+2) npm run start-server
